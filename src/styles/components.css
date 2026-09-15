@@ -1541,6 +1541,10 @@ body.menu-open .whatsapp-fab {
   .editorial-gallery__cell--portrait:nth-child(6) {
     grid-column: span 4;
   }
+
+  .editorial-gallery__cell--wide:nth-child(7) {
+    grid-column: 1 / -1;
+  }
 }
 
 .editorial-gallery__cell {

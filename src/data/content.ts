@@ -164,7 +164,7 @@ export const GALLERY_SLIDES = [
 ] as const
 
 /**
- * Primary editorial gallery — Part 1 (6 kitchens).
+ * Primary editorial gallery — kitchen inspiration visuals.
  * Shown as inspiration / gallery visuals, not as named client projects.
  */
 export const EDITORIAL_GALLERY = [
@@ -216,6 +216,14 @@ export const EDITORIAL_GALLERY = [
     width: 770,
     height: 960,
     layout: 'portrait',
+  },
+  {
+    id: 'kitchen-07',
+    src: '/images/projects/kitchen-07.jpg',
+    alt: 'תמונת השראה — מטבח בהיר עם חזית מחורצת, ויטרינות שחורות וברזים שחורים',
+    width: 1024,
+    height: 682,
+    layout: 'wide',
   },
 ] as const
 
