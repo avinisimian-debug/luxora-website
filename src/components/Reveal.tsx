@@ -18,14 +18,23 @@ export function Reveal({ children, className = '', delayMs = 0 }: RevealProps) {
       return
     }
 
+    const reveal = () => el.classList.add('is-visible')
+
+    // Already in (or near) view on mount — settle immediately
+    const rect = el.getBoundingClientRect()
+    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+      reveal()
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add('is-visible')
+          reveal()
           observer.unobserve(el)
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0.05, rootMargin: '0px 0px 12% 0px' },
     )
 
     observer.observe(el)

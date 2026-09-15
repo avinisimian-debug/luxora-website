@@ -201,7 +201,9 @@
 .nav-mobile {
   position: fixed;
   inset: 0;
-  background: var(--color-ivory-soft);
+  /* Solid from first paint — never fade opacity over the hero */
+  background: #faf8f4;
+  opacity: 1;
   padding: calc(var(--header-h) + 1rem) var(--gutter) 3rem;
   display: flex;
   flex-direction: column;
@@ -209,17 +211,15 @@
   z-index: calc(var(--z-header) + 1);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  animation: nav-in 0.35s var(--ease);
+  animation: nav-in 0.28s var(--ease);
   box-shadow: none;
 }
 
 @keyframes nav-in {
   from {
-    opacity: 0;
-    transform: translateY(-12px);
+    transform: translateY(-10px);
   }
   to {
-    opacity: 1;
     transform: none;
   }
 }
@@ -1274,20 +1274,28 @@ body.menu-open {
   }
 }
 
+/* Applied in render (not useEffect) so header is opaque on the first open frame */
+.site-header.is-menu-open,
 body.menu-open .site-header {
-  background: var(--color-ivory-soft);
+  background: #faf8f4;
   backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
+.site-header.is-menu-open.is-over-hero:not(.is-scrolled) .nav-desktop a,
 body.menu-open .site-header.is-over-hero:not(.is-scrolled) .nav-desktop a {
   color: var(--color-ink-muted);
 }
 
+.site-header.is-menu-open.is-over-hero:not(.is-scrolled) .menu-toggle,
 body.menu-open .site-header.is-over-hero:not(.is-scrolled) .menu-toggle {
-  background: var(--color-ivory-soft);
+  background: #faf8f4;
   border-color: var(--color-stone);
 }
 
+.site-header.is-menu-open.is-over-hero:not(.is-scrolled) .menu-toggle span,
+.site-header.is-menu-open.is-over-hero:not(.is-scrolled) .menu-toggle span::before,
+.site-header.is-menu-open.is-over-hero:not(.is-scrolled) .menu-toggle span::after,
 body.menu-open .site-header.is-over-hero:not(.is-scrolled) .menu-toggle span,
 body.menu-open .site-header.is-over-hero:not(.is-scrolled) .menu-toggle span::before,
 body.menu-open .site-header.is-over-hero:not(.is-scrolled) .menu-toggle span::after {

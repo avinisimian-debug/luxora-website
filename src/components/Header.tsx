@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { CONTACT, NAV } from '../data/content'
 import { BrandLogo } from './BrandLogo'
@@ -17,6 +17,10 @@ export function Header() {
   }, [])
 
   useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
+  useLayoutEffect(() => {
     document.body.classList.toggle('menu-open', open)
     return () => document.body.classList.remove('menu-open')
   }, [open])
@@ -26,6 +30,7 @@ export function Header() {
     'site-header',
     scrolled ? 'is-scrolled' : '',
     overHero ? 'is-over-hero' : '',
+    open ? 'is-menu-open' : '',
   ]
     .filter(Boolean)
     .join(' ')
