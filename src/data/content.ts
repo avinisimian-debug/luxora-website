@@ -149,7 +149,7 @@ export const PROJECT_TYPES = [
  * Do not present as named client projects unless officially confirmed.
  */
 export const GALLERY_SLIDES = [
-  { src: '/images/hero-opt.jpg', alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות בהירות' },
+  { src: '/images/hero-home.jpg', alt: 'תמונת השראה — מטבח עם ברז מוזהב ומשטח שיש' },
   { src: '/images/kitchen-wide.jpg', alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות מחורצות' },
   { src: '/images/corner-fridge.jpg', alt: 'תמונת השראה — פינת מטבח עם נגרות גבוהה' },
   { src: '/images/breakfast-bar.jpg', alt: 'תמונת השראה — פינת ישיבה ונגרות' },
@@ -228,6 +228,42 @@ export const HOME_FEATURED = [
   EDITORIAL_GALLERY[1],
   EDITORIAL_GALLERY[2],
   EDITORIAL_GALLERY[3],
+] as const
+
+/**
+ * Before & After visual storytelling — Part 2.
+ * Frames only as supplied. No invented project names, claims, or stage labels
+ * unless a true before/after pair is provided with matching intent.
+ *
+ * Current delivery: two editorial frames of the same finished kitchen
+ * (overview + faucet detail). Shown as visual storytelling — not as a
+ * labeled לפני→אחרי renovation claim.
+ */
+export const BEFORE_AFTER_SETS = [
+  {
+    id: 'ba-01',
+    type: 'story' as const,
+    index: '01',
+    image: {
+      src: '/images/before-after/set-01-overview.jpg',
+      alt: 'מטבח — מבט כללי',
+      width: 1024,
+      height: 682,
+      orientation: 'landscape' as const,
+    },
+  },
+  {
+    id: 'ba-02',
+    type: 'story' as const,
+    index: '02',
+    image: {
+      src: '/images/before-after/set-01-detail.jpg',
+      alt: 'מטבח — ברזים',
+      width: 682,
+      height: 1024,
+      orientation: 'portrait' as const,
+    },
+  },
 ] as const
 
 /** Real client testimonials — provided by the business */

@@ -111,10 +111,10 @@
 }
 
 .brand-logo--hero {
-  max-height: clamp(3.75rem, 10vw, 5.5rem);
+  max-height: clamp(3.5rem, 9vw, 5.1rem);
   width: auto;
-  max-width: min(100%, 15rem);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.32);
+  max-width: min(100%, 14rem);
+  filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.35));
 }
 
 .home-hero__logo {
@@ -306,6 +306,7 @@ body.menu-open .whatsapp-fab {
   min-height: 100dvh;
   display: grid;
   align-items: end;
+  justify-items: stretch;
   color: var(--color-ivory-soft);
   overflow: hidden;
 }
@@ -319,38 +320,62 @@ body.menu-open .whatsapp-fab {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 58% 38%;
-  transform: scale(1.04);
-  animation: hero-drift 32s var(--ease) both;
+  /* Faucet stays on the visual left; quieter marble/cabinets under RTL copy on the right */
+  object-position: 52% 44%;
+  transform: scale(1.03);
+  animation: hero-drift 36s var(--ease) both;
 }
 
 @keyframes hero-drift {
   from {
-    transform: scale(1.07);
+    transform: scale(1.055);
   }
   to {
-    transform: scale(1.02);
+    transform: scale(1.01);
   }
 }
 
 .home-hero__veil {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
+    /* Soft floor for type — image stays the hero */
     linear-gradient(
       to top,
-      rgba(28, 25, 23, 0.9) 0%,
-      rgba(28, 25, 23, 0.42) 48%,
-      rgba(28, 25, 23, 0.22) 100%
+      rgba(20, 17, 14, 0.78) 0%,
+      rgba(20, 17, 14, 0.38) 42%,
+      rgba(20, 17, 14, 0.12) 72%,
+      rgba(20, 17, 14, 0.18) 100%
     ),
-    linear-gradient(to left, transparent 35%, rgba(28, 25, 23, 0.35) 100%);
+    /* RTL: deepen inline-start (right) for copy; protect faucet on the left */
+    linear-gradient(
+      to left,
+      rgba(20, 17, 14, 0.08) 0%,
+      rgba(20, 17, 14, 0.22) 42%,
+      rgba(20, 17, 14, 0.48) 100%
+    );
 }
 
 .home-hero__content {
   position: relative;
   z-index: 1;
-  padding-block: clamp(5.5rem, 16vh, 9rem) clamp(3.75rem, 9vh, 6rem);
-  max-width: min(100%, 36rem);
+  padding-block: clamp(5.75rem, 14vh, 8.5rem) clamp(3.5rem, 8vh, 5.75rem);
+  max-width: min(100%, 34rem);
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+  animation: hero-copy-in 1.05s var(--ease-out) both;
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .home-hero__mark {
@@ -359,56 +384,135 @@ body.menu-open .whatsapp-fab {
   letter-spacing: 0.42em;
   font-weight: 500;
   color: var(--color-brass);
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.05rem;
 }
 
 .home-hero h1 {
   font-size: var(--text-hero);
   color: var(--color-ivory-soft);
-  max-width: 13ch;
+  max-width: 12.5ch;
   font-weight: 500;
   line-height: 1.12;
+  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.28);
 }
 
 .home-hero__sub {
-  margin-top: 1.4rem;
+  margin-top: 1.25rem;
   font-size: var(--text-lead);
-  color: rgba(250, 247, 242, 0.86);
-  max-width: 26em;
+  color: rgba(250, 247, 242, 0.9);
+  max-width: 24em;
 }
 
-@media (max-width: 767px) {
+.home-hero .btn-row {
+  margin-top: 1.85rem;
+}
+
+.home-hero .btn--ghost {
+  border-color: rgba(250, 247, 242, 0.55);
+  color: var(--color-ivory-soft);
+  background: rgba(20, 17, 14, 0.18);
+}
+
+.home-hero .btn--ghost:hover {
+  border-color: var(--color-ivory-soft);
+  background: rgba(20, 17, 14, 0.32);
+}
+
+@media (min-width: 900px) {
+  .home-hero__content {
+    max-width: min(100%, 36rem);
+  }
+
+  .home-hero__media img {
+    object-position: 54% 42%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-hero__media img {
+    object-position: 56% 40%;
+  }
+}
+
+@media (max-width: 899px) and (min-width: 600px) {
+  .home-hero__media img {
+    object-position: 48% 45%;
+  }
+
+  .home-hero__veil {
+    background:
+      linear-gradient(
+        to top,
+        rgba(20, 17, 14, 0.82) 0%,
+        rgba(20, 17, 14, 0.42) 48%,
+        rgba(20, 17, 14, 0.16) 100%
+      ),
+      linear-gradient(
+        to left,
+        rgba(20, 17, 14, 0.1) 0%,
+        rgba(20, 17, 14, 0.28) 45%,
+        rgba(20, 17, 14, 0.5) 100%
+      );
+  }
+}
+
+@media (max-width: 599px) {
   .home-hero {
-    min-height: min(100svh, 44rem);
+    min-height: min(100svh, 42rem);
+    align-items: end;
   }
 
   .home-hero__content {
-    padding-block: 5rem 3.25rem;
+    padding-block: 4.75rem 2.85rem;
     max-width: 100%;
+    animation-duration: 0.85s;
   }
 
   .home-hero h1 {
-    max-width: 14ch;
+    max-width: 13ch;
+    font-size: clamp(2.05rem, 9.2vw, 2.65rem);
+  }
+
+  .home-hero__sub {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .home-hero .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 1.5rem;
+  }
+
+  .home-hero .btn-row .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .home-hero__media img {
     animation: none;
-    transform: scale(1.05);
-    object-position: 68% 32%;
+    transform: scale(1.06);
+    /* Mobile: keep brass faucet as the primary subject on the left */
+    object-position: 34% 48%;
   }
 
   .home-hero__veil {
     background: linear-gradient(
       to top,
-      rgba(28, 25, 23, 0.92) 0%,
-      rgba(28, 25, 23, 0.5) 55%,
-      rgba(28, 25, 23, 0.28) 100%
+      rgba(20, 17, 14, 0.88) 0%,
+      rgba(20, 17, 14, 0.52) 46%,
+      rgba(20, 17, 14, 0.22) 100%
     );
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .home-hero__media img {
+    animation: none;
+    transform: none;
+  }
+
+  .home-hero__content {
     animation: none;
   }
 }
@@ -1220,6 +1324,173 @@ body.menu-open .whatsapp-fab {
   letter-spacing: 0.08em;
   color: var(--color-walnut-deep);
   font-weight: 700;
+}
+
+/* ——— Before & After visual storytelling ——— */
+.section--ba {
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  background:
+    linear-gradient(180deg, var(--color-ivory-soft) 0%, var(--color-ivory) 48%, var(--color-sand) 100%);
+}
+
+.section--ba .section-title {
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.ba-story {
+  display: grid;
+  gap: 0;
+}
+
+.ba-story__set--primary {
+  width: 100%;
+}
+
+.ba-story__set--detail {
+  width: min(100%, 28rem);
+  margin-inline: auto;
+  margin-top: 0;
+}
+
+@media (min-width: 860px) {
+  .ba-story {
+    grid-template-columns: minmax(0, 1.45fr) auto minmax(0, 0.95fr);
+    align-items: stretch;
+    gap: 0;
+    min-height: min(70vh, 36rem);
+  }
+
+  .ba-story__set--primary,
+  .ba-story__set--detail {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+  }
+
+  .ba-story__set--primary .ba-story__panel,
+  .ba-story__set--detail .ba-story__panel {
+    height: 100%;
+    flex: 1;
+  }
+}
+
+.ba-story__bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 0;
+}
+
+@media (min-width: 860px) {
+  .ba-story__bridge {
+    padding: 0 0.85rem;
+  }
+}
+
+.ba-story__bridge-line {
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  background: var(--color-walnut);
+  opacity: 0.35;
+}
+
+@media (min-width: 860px) {
+  .ba-story__bridge-line {
+    width: 1px;
+    height: min(42%, 12rem);
+  }
+}
+
+.ba-story__panel {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: var(--color-stone);
+  overflow: hidden;
+  cursor: zoom-in;
+  isolation: isolate;
+}
+
+.ba-story__panel--wide {
+  aspect-ratio: 3 / 2;
+}
+
+.ba-story__panel--tall {
+  aspect-ratio: 3 / 4;
+}
+
+@media (min-width: 860px) {
+  .ba-story__panel--wide,
+  .ba-story__panel--tall {
+    aspect-ratio: auto;
+  }
+}
+
+.ba-story__panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.15s var(--ease);
+}
+
+.ba-story__panel--wide img {
+  object-position: center 42%;
+}
+
+.ba-story__panel--tall img {
+  object-position: center 28%;
+}
+
+.ba-story__panel:hover img,
+.ba-story__panel:focus-visible img {
+  transform: scale(1.035);
+}
+
+.ba-story__panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(28, 25, 23, 0.08) 0%,
+    transparent 38%,
+    rgba(28, 25, 23, 0.2) 100%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease);
+}
+
+.ba-story__panel:hover::after,
+.ba-story__panel:focus-visible::after {
+  opacity: 0.72;
+}
+
+.ba-story__mark {
+  position: absolute;
+  top: 0.95rem;
+  inset-inline-start: 0.95rem;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-ivory-soft);
+  background: rgba(28, 25, 23, 0.42);
+  padding: 0.35rem 0.55rem;
+  backdrop-filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ba-story__panel img {
+    transition: none;
+  }
 }
 
 /* ——— Editorial kitchen gallery ——— */

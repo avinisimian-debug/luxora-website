@@ -4,10 +4,10 @@
  */
 export const MEDIA = {
   hero: {
-    src: '/images/hero-opt.jpg',
-    alt: 'תמונת השראה — מטבח עם חזיתות בהירות וויטרינות',
-    width: 1920,
-    height: 1280,
+    src: '/images/hero-home.jpg',
+    alt: 'תמונת השראה — מטבח עם ברז מוזהב, משטח שיש ותאורה חמה',
+    width: 1024,
+    height: 682,
   },
   about: {
     src: '/images/kitchen-wide.jpg',

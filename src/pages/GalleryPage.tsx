@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { KITCHEN_STYLES, STYLES_INTRO } from '../data/content'
+import { BeforeAfterStory } from '../components/BeforeAfterStory'
 import { EditorialGallery } from '../components/EditorialGallery'
 import { Reveal } from '../components/Reveal'
 
@@ -19,6 +20,17 @@ export function GalleryPage() {
       <section className="section section--tight-top section--gallery" aria-label="גלריית תמונות השראה">
         <div className="container">
           <EditorialGallery />
+        </div>
+      </section>
+
+      <section className="section section--ba" aria-labelledby="ba-title">
+        <div className="container">
+          <Reveal>
+            <h2 id="ba-title" className="section-title">
+              לפני ואחרי
+            </h2>
+          </Reveal>
+          <BeforeAfterStory />
         </div>
       </section>
 
