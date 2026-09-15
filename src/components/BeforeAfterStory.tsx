@@ -1,157 +1,197 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
-import { BEFORE_AFTER_SETS } from '../data/content'
+import { BEFORE_AFTER_COMPARE } from '../data/content'
 import { Reveal } from './Reveal'
 
-type Frame = (typeof BEFORE_AFTER_SETS)[number]['image'] & {
-  index: string
-  id: string
-}
-
-const FRAMES: Frame[] = BEFORE_AFTER_SETS.map((set) => ({
-  ...set.image,
-  index: set.index,
-  id: set.id,
-}))
+const { before, after, detail } = BEFORE_AFTER_COMPARE
 
 export function BeforeAfterStory() {
-  const [active, setActive] = useState<number | null>(null)
+  const [pos, setPos] = useState(52)
+  const [dragging, setDragging] = useState(false)
+  const [lightbox, setLightbox] = useState<'before' | 'after' | 'detail' | null>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
   const closeBtnRef = useRef<HTMLButtonElement>(null)
   const titleId = useId()
-  const open = active !== null
-  const current = open ? FRAMES[active] : null
 
-  const close = useCallback(() => setActive(null), [])
-  const showPrev = useCallback(() => {
-    setActive((i) => (i === null ? i : (i - 1 + FRAMES.length) % FRAMES.length))
-  }, [])
-  const showNext = useCallback(() => {
-    setActive((i) => (i === null ? i : (i + 1) % FRAMES.length))
+  const updateFromClientX = useCallback((clientX: number) => {
+    const el = trackRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    // RTL: 0% = after fully shown from the inline-start (right);
+    // we store pos as % of after visible from the physical left for clip-path simplicity.
+    const raw = ((clientX - rect.left) / rect.width) * 100
+    setPos(Math.min(96, Math.max(4, raw)))
   }, [])
 
   useEffect(() => {
-    if (!open) return
-    const prevOverflow = document.body.style.overflow
+    if (!dragging) return
+    const onMove = (e: PointerEvent) => updateFromClientX(e.clientX)
+    const onUp = () => setDragging(false)
+    window.addEventListener('pointermove', onMove)
+    window.addEventListener('pointerup', onUp)
+    window.addEventListener('pointercancel', onUp)
+    return () => {
+      window.removeEventListener('pointermove', onMove)
+      window.removeEventListener('pointerup', onUp)
+      window.removeEventListener('pointercancel', onUp)
+    }
+  }, [dragging, updateFromClientX])
+
+  useEffect(() => {
+    if (!lightbox) return
+    const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     closeBtnRef.current?.focus()
-
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
-      if (e.key === 'ArrowRight') showPrev()
-      if (e.key === 'ArrowLeft') showNext()
+      if (e.key === 'Escape') setLightbox(null)
     }
     window.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = prevOverflow
+      document.body.style.overflow = prev
       window.removeEventListener('keydown', onKey)
     }
-  }, [open, close, showPrev, showNext])
+  }, [lightbox])
+
+  const lightSrc =
+    lightbox === 'before' ? before : lightbox === 'after' ? after : lightbox === 'detail' ? detail : null
 
   return (
     <>
-      <div className="ba-story" role="list">
-        <Reveal className="ba-story__set ba-story__set--primary">
-          <button
-            type="button"
-            role="listitem"
-            className="ba-story__panel ba-story__panel--wide"
-            onClick={() => setActive(0)}
-            aria-label={`פתיחת תמונה בגודל מלא: ${FRAMES[0].alt}`}
-          >
-            <span className="ba-story__mark" aria-hidden="true">
-              {FRAMES[0].index}
-            </span>
+      <Reveal>
+        <div
+          className="ba-compare"
+          ref={trackRef}
+          onPointerDown={(e) => {
+            setDragging(true)
+            updateFromClientX(e.clientX)
+            ;(e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId)
+          }}
+        >
+          <div className="ba-compare__layer ba-compare__layer--after">
             <img
-              src={FRAMES[0].src}
-              alt={FRAMES[0].alt}
-              width={FRAMES[0].width}
-              height={FRAMES[0].height}
+              src={after.src}
+              alt={after.alt}
+              width={after.width}
+              height={after.height}
               loading="lazy"
               decoding="async"
+              draggable={false}
             />
-          </button>
-        </Reveal>
+            <span className="ba-compare__label ba-compare__label--after">אחרי</span>
+          </div>
 
-        <div className="ba-story__bridge" aria-hidden="true">
-          <span className="ba-story__bridge-line" />
+          <div
+            className="ba-compare__layer ba-compare__layer--before"
+            style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+          >
+            <img
+              src={before.src}
+              alt={before.alt}
+              width={before.width}
+              height={before.height}
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+            />
+            <span className="ba-compare__label ba-compare__label--before">לפני</span>
+          </div>
+
+          <div
+            className="ba-compare__handle"
+            style={{ left: `${pos}%` }}
+            role="slider"
+            aria-valuemin={4}
+            aria-valuemax={96}
+            aria-valuenow={Math.round(pos)}
+            aria-label="השוואת לפני ואחרי — גרור להצגת השינוי"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'ArrowLeft') setPos((p) => Math.min(96, p + 3))
+              if (e.key === 'ArrowRight') setPos((p) => Math.max(4, p - 3))
+            }}
+          >
+            <span className="ba-compare__handle-line" aria-hidden="true" />
+            <span className="ba-compare__handle-knob" aria-hidden="true">
+              ‹ ›
+            </span>
+          </div>
         </div>
+      </Reveal>
 
-        <Reveal delayMs={80} className="ba-story__set ba-story__set--detail">
-          <button
-            type="button"
-            role="listitem"
-            className="ba-story__panel ba-story__panel--tall"
-            onClick={() => setActive(1)}
-            aria-label={`פתיחת תמונה בגודל מלא: ${FRAMES[1].alt}`}
-          >
-            <span className="ba-story__mark" aria-hidden="true">
-              {FRAMES[1].index}
-            </span>
-            <img
-              src={FRAMES[1].src}
-              alt={FRAMES[1].alt}
-              width={FRAMES[1].width}
-              height={FRAMES[1].height}
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
-        </Reveal>
+      <div className="ba-compare__actions">
+        <button
+          type="button"
+          className="ba-compare__open"
+          onClick={() => setLightbox('before')}
+        >
+          לפני
+        </button>
+        <button
+          type="button"
+          className="ba-compare__open"
+          onClick={() => setLightbox('after')}
+        >
+          אחרי
+        </button>
+        <button
+          type="button"
+          className="ba-compare__open"
+          onClick={() => setLightbox('detail')}
+        >
+          פרט
+        </button>
       </div>
 
-      {open && current ? (
+      <Reveal delayMs={80} className="ba-compare__detail">
+        <button
+          type="button"
+          className="ba-compare__detail-btn"
+          onClick={() => setLightbox('detail')}
+          aria-label={`פתיחת תמונה בגודל מלא: ${detail.alt}`}
+        >
+          <span className="ba-compare__label ba-compare__label--after">אחרי</span>
+          <img
+            src={detail.src}
+            alt={detail.alt}
+            width={detail.width}
+            height={detail.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+      </Reveal>
+
+      {lightbox && lightSrc ? (
         <div
           className="lightbox"
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          onClick={close}
+          onClick={() => setLightbox(null)}
         >
           <p id={titleId} className="visually-hidden">
-            {current.alt}
+            {lightSrc.alt}
           </p>
           <button
             ref={closeBtnRef}
             type="button"
             className="lightbox__close"
             aria-label="סגירת תצוגה"
-            onClick={close}
+            onClick={() => setLightbox(null)}
           >
             ×
           </button>
-          <button
-            type="button"
-            className="lightbox__nav lightbox__nav--prev"
-            aria-label="תמונה קודמת"
-            onClick={(e) => {
-              e.stopPropagation()
-              showPrev()
-            }}
-          >
-            ›
-          </button>
           <figure className="lightbox__figure" onClick={(e) => e.stopPropagation()}>
             <img
-              src={current.src}
-              alt={current.alt}
-              width={current.width}
-              height={current.height}
+              src={lightSrc.src}
+              alt={lightSrc.alt}
+              width={lightSrc.width}
+              height={lightSrc.height}
               decoding="async"
             />
             <figcaption>
-              {current.index} / {String(FRAMES.length).padStart(2, '0')}
+              {lightbox === 'before' ? 'לפני' : lightbox === 'after' ? 'אחרי' : 'פרט'}
             </figcaption>
           </figure>
-          <button
-            type="button"
-            className="lightbox__nav lightbox__nav--next"
-            aria-label="תמונה הבאה"
-            onClick={(e) => {
-              e.stopPropagation()
-              showNext()
-            }}
-          >
-            ‹
-          </button>
         </div>
       ) : null}
     </>

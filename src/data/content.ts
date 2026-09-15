@@ -239,38 +239,44 @@ export const HOME_FEATURED = [
 ] as const
 
 /**
- * Before & After visual storytelling — Part 2.
- * Frames only as supplied. No invented project names, claims, or stage labels
- * unless a true before/after pair is provided with matching intent.
- *
- * Current delivery: two editorial frames of the same finished kitchen
- * (overview + faucet detail). Shown as visual storytelling — not as a
- * labeled לפני→אחרי renovation claim.
+ * Before & After — true pair when both frames are supplied.
+ * Labels: לפני / אחרי only. No invented project copy.
  */
+export const BEFORE_AFTER_COMPARE = {
+  id: 'ba-01',
+  before: {
+    src: '/images/before-after/set-01-before.jpg',
+    alt: 'לפני — מטבח בחלל מתחת למדרגות',
+    width: 1024,
+    height: 768,
+  },
+  after: {
+    src: '/images/before-after/set-01-overview.jpg',
+    alt: 'אחרי — מטבח בחלל מתחת למדרגות',
+    width: 1024,
+    height: 682,
+  },
+  detail: {
+    src: '/images/before-after/set-01-detail.jpg',
+    alt: 'אחרי — פרט ברזים',
+    width: 682,
+    height: 1024,
+  },
+} as const
+
+/** @deprecated kept for compatibility — use BEFORE_AFTER_COMPARE */
 export const BEFORE_AFTER_SETS = [
   {
     id: 'ba-01',
-    type: 'story' as const,
+    type: 'compare' as const,
     index: '01',
-    image: {
-      src: '/images/before-after/set-01-overview.jpg',
-      alt: 'מטבח — מבט כללי',
-      width: 1024,
-      height: 682,
-      orientation: 'landscape' as const,
-    },
+    image: BEFORE_AFTER_COMPARE.before,
   },
   {
     id: 'ba-02',
-    type: 'story' as const,
+    type: 'compare' as const,
     index: '02',
-    image: {
-      src: '/images/before-after/set-01-detail.jpg',
-      alt: 'מטבח — ברזים',
-      width: 682,
-      height: 1024,
-      orientation: 'portrait' as const,
-    },
+    image: BEFORE_AFTER_COMPARE.after,
   },
 ] as const
 
