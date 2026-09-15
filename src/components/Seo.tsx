@@ -56,7 +56,7 @@ function buildBusinessJsonLd() {
     description: BRAND.intro,
     url: SITE_URL,
     image: `${SITE_URL}${OG_IMAGE_PATH}`,
-    logo: `${SITE_URL}/images/logo-luxora.jpg`,
+    logo: `${SITE_URL}/images/logo-luxora.png`,
     email: CONTACT.email,
     telephone: `+972${CONTACT.phoneTel.slice(1)}`,
     areaServed: {
