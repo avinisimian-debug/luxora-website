@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { KITCHEN_STYLES, STYLES_INTRO } from '../data/content'
-import { GalleryCarousel } from '../components/GalleryCarousel'
+import { EditorialGallery } from '../components/EditorialGallery'
 import { Reveal } from '../components/Reveal'
 
 export function GalleryPage() {
@@ -9,14 +9,18 @@ export function GalleryPage() {
       <header className="page-intro page-intro--compact">
         <div className="container">
           <p className="eyebrow">גלריה</p>
-          <h1>המטבחים שלנו</h1>
+          <h1>תמונות השראה</h1>
           <p className="page-intro__lead">
-            תמונות השראה למטבחים ונגרות בהתאמה אישית. {STYLES_INTRO}
+            גלריה ויזואלית למטבחים ונגרות בהתאמה אישית. {STYLES_INTRO}
           </p>
         </div>
       </header>
 
-      <GalleryCarousel />
+      <section className="section section--tight-top section--gallery" aria-label="גלריית תמונות השראה">
+        <div className="container">
+          <EditorialGallery />
+        </div>
+      </section>
 
       <section className="section section--ivory" id="styles">
         <div className="container">
@@ -24,7 +28,7 @@ export function GalleryPage() {
             <p className="eyebrow">סוגי מטבחים</p>
             <h2 className="section-title">סגנונות</h2>
             <p className="section-lead">{STYLES_INTRO}</p>
-            <ul className="styles-strip">
+            <ul className="styles-strip styles-strip--editorial">
               {KITCHEN_STYLES.map((style, i) => (
                 <li key={style.id}>
                   {style.title}

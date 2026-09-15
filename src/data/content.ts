@@ -163,14 +163,71 @@ export const GALLERY_SLIDES = [
   { src: '/images/styling-vases.jpg', alt: 'תמונת השראה — פרט עיצובי בחלל' },
 ] as const
 
+/**
+ * Primary editorial gallery — Part 1 (6 kitchens).
+ * Shown as inspiration / gallery visuals, not as named client projects.
+ */
+export const EDITORIAL_GALLERY = [
+  {
+    id: 'kitchen-01',
+    src: '/images/projects/kitchen-01.jpg',
+    alt: 'תמונת השראה — מטבח מודרני עם חזיתות אפורות, עץ ומשטח אבן',
+    width: 1024,
+    height: 768,
+    layout: 'hero',
+  },
+  {
+    id: 'kitchen-03',
+    src: '/images/projects/kitchen-03.jpg',
+    alt: 'תמונת השראה — מטבח מינימליסטי עם חזיתות בהירות, פס עץ וברז מוזהב',
+    width: 935,
+    height: 721,
+    layout: 'wide',
+  },
+  {
+    id: 'kitchen-05',
+    src: '/images/projects/kitchen-05.jpg',
+    alt: 'תמונת השראה — מטבח עם אי מרכזי, משטח אבן וארונות גבוהים',
+    width: 960,
+    height: 710,
+    layout: 'wide',
+  },
+  {
+    id: 'kitchen-04',
+    src: '/images/projects/kitchen-04.jpg',
+    alt: 'תמונת השראה — מבט על מטבח עם אי, תאורת קו ותנורים משולבים',
+    width: 724,
+    height: 960,
+    layout: 'portrait',
+  },
+  {
+    id: 'kitchen-02',
+    src: '/images/projects/kitchen-02.jpg',
+    alt: 'תמונת השראה — יחידת מטבח עם חזיתות עץ וברזים בגימור נחושת',
+    width: 1024,
+    height: 472,
+    layout: 'banner',
+    objectPosition: 'left center',
+  },
+  {
+    id: 'kitchen-06',
+    src: '/images/projects/kitchen-06.jpg',
+    alt: 'תמונת השראה — מטבח בצורת U עם משטח אבן מלא וחזיתות בהירות',
+    width: 770,
+    height: 960,
+    layout: 'portrait',
+  },
+] as const
+
 export const HERO_IMAGE = GALLERY_SLIDES[0]
 export const EDITORIAL_IMAGE = GALLERY_SLIDES[1]
 
+/** Home preview — first images from the editorial kitchen set */
 export const HOME_FEATURED = [
-  GALLERY_SLIDES[0],
-  GALLERY_SLIDES[1],
-  GALLERY_SLIDES[2],
-  GALLERY_SLIDES[3],
+  EDITORIAL_GALLERY[0],
+  EDITORIAL_GALLERY[1],
+  EDITORIAL_GALLERY[2],
+  EDITORIAL_GALLERY[3],
 ] as const
 
 /** Real client testimonials — provided by the business */
