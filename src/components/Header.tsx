@@ -62,7 +62,10 @@ export function Header() {
                 </NavLink>
               ))}
               <div className="nav-mobile__cta">
-                <Link className="btn btn--primary" to="/contact" onClick={close}>
+                <a className="btn btn--primary" href={CONTACT.phoneHref}>
+                  {CONTACT.phoneDisplay}
+                </a>
+                <Link className="btn btn--line" to="/contact" onClick={close}>
                   לתיאום פגישת תכנון
                 </Link>
                 <a
@@ -102,6 +105,9 @@ export function Header() {
         </nav>
 
         <div className="header-actions">
+          <a className="header-phone" href={CONTACT.phoneHref} dir="ltr">
+            {CONTACT.phoneDisplay}
+          </a>
           <Link className="btn btn--primary header-cta" to="/contact">
             לתיאום פגישת תכנון
           </Link>

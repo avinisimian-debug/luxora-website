@@ -56,6 +56,12 @@
   color: var(--color-charcoal);
 }
 
+.site-header.is-over-hero:not(.is-scrolled):not(.is-menu-open) .header-phone {
+  color: var(--color-ivory-soft);
+  border-color: rgba(250, 247, 242, 0.55);
+  background: rgba(20, 17, 14, 0.35);
+}
+
 /* Opaque header the instant menu opens (class set in render) */
 .site-header.is-menu-open {
   background: #faf8f4;
@@ -159,6 +165,29 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
+}
+
+.header-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-charcoal);
+  text-decoration: none;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--color-stone);
+  background: #fff;
+  line-height: 1;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.header-phone:hover {
+  color: var(--color-walnut-deep);
+  border-color: var(--color-walnut);
 }
 
 .header-cta {
