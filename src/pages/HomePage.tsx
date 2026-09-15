@@ -7,13 +7,12 @@ import {
   DIFFERENTIATORS,
   EDITORIAL_IMAGE,
   HOME_FEATURED,
-  KITCHEN_STYLES,
-  STYLES_INTRO,
   TESTIMONIALS,
 } from '../data/content'
 import { MEDIA } from '../data/media'
 import { BrandLogo } from '../components/BrandLogo'
 import { Reveal } from '../components/Reveal'
+import { StylesShowcase } from '../components/StylesShowcase'
 
 export function HomePage() {
   const [heroFeature, ...sideFeatures] = HOME_FEATURED
@@ -105,21 +104,7 @@ export function HomePage() {
 
       <section className="section section--ivory" aria-labelledby="styles-title">
         <div className="container">
-          <Reveal>
-            <p className="eyebrow">סוגי מטבחים</p>
-            <h2 id="styles-title" className="section-title">
-              סגנונות
-            </h2>
-            <p className="section-lead">{STYLES_INTRO}</p>
-            <ul className="styles-strip styles-strip--editorial">
-              {KITCHEN_STYLES.map((style, i) => (
-                <li key={style.id}>
-                  {style.title}
-                  <span>{String(i + 1).padStart(2, '0')}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+          <StylesShowcase headingId="styles-title" />
         </div>
       </section>
 

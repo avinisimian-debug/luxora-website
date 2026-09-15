@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import { KITCHEN_STYLES, STYLES_INTRO } from '../data/content'
+import { STYLES_INTRO } from '../data/content'
 import { BeforeAfterStory } from '../components/BeforeAfterStory'
 import { EditorialGallery } from '../components/EditorialGallery'
 import { Reveal } from '../components/Reveal'
+import { StylesShowcase } from '../components/StylesShowcase'
 
 export function GalleryPage() {
   return (
@@ -34,26 +34,9 @@ export function GalleryPage() {
         </div>
       </section>
 
-      <section className="section section--ivory" id="styles">
+      <section className="section section--ivory" id="styles" aria-labelledby="styles-title">
         <div className="container">
-          <Reveal>
-            <p className="eyebrow">סוגי מטבחים</p>
-            <h2 className="section-title">סגנונות</h2>
-            <p className="section-lead">{STYLES_INTRO}</p>
-            <ul className="styles-strip styles-strip--editorial">
-              {KITCHEN_STYLES.map((style, i) => (
-                <li key={style.id}>
-                  {style.title}
-                  <span>{String(i + 1).padStart(2, '0')}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="btn-row">
-              <Link className="btn btn--primary" to="/contact">
-                לתיאום פגישת תכנון
-              </Link>
-            </div>
-          </Reveal>
+          <StylesShowcase headingId="styles-title" galleryCta={false} />
         </div>
       </section>
     </>
