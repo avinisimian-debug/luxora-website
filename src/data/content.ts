@@ -92,19 +92,107 @@ export const PROJECT_TYPES = [
 
 /** Client-supplied photos only — swap via this list */
 export const GALLERY_SLIDES = [
-  { src: '/images/hero.jpg', alt: 'מטבח בהתאמה אישית' },
-  { src: '/images/kitchen-wide.jpg', alt: 'מטבח עם ויטרינות וחזיתות' },
-  { src: '/images/corner-fridge.jpg', alt: 'פינת מטבח עם נגרות גבוהה' },
-  { src: '/images/breakfast-bar.jpg', alt: 'פינת ישיבה ונגרות' },
-  { src: '/images/vitrine-pastries.jpg', alt: 'ויטרינה ומשטח עבודה' },
-  { src: '/images/corner-detail.jpg', alt: 'פרט חזית ואבן' },
-  { src: '/images/fluted-detail.jpg', alt: 'פרט חזית מחורצת' },
-  { src: '/images/drawers.jpg', alt: 'מגירות ופרזול' },
-  { src: '/images/drawer-open.jpg', alt: 'מגירה פתוחה' },
-  { src: '/images/sink-drawer.jpg', alt: 'פתרון אחסון במטבח' },
-  { src: '/images/pastries.jpg', alt: 'משטח במטבח' },
-  { src: '/images/styling-vases.jpg', alt: 'פרט עיצובי בחלל' },
+  { src: '/images/hero-opt.jpg', alt: 'מטבח מודרני עם ויטרינות מוארות וחזיתות בהירות' },
+  { src: '/images/kitchen-wide.jpg', alt: 'מטבח רחב עם ויטרינות, חזיתות מחורצות ומשטח אבן' },
+  { src: '/images/corner-fridge.jpg', alt: 'פינת מטבח עם נגרות גבוהה ומקרר משולב' },
+  { src: '/images/breakfast-bar.jpg', alt: 'פינת ישיבה עם נגרות ומשטח עבודה' },
+  { src: '/images/vitrine-pastries.jpg', alt: 'ויטרינה מוארת ליד משטח עבודה' },
+  { src: '/images/corner-detail.jpg', alt: 'פרט חזית ואבן בפינת המטבח' },
+  { src: '/images/fluted-detail.jpg', alt: 'פרט חזית מחורצת בגימור עדין' },
+  { src: '/images/drawers.jpg', alt: 'מגירות מטבח עם ידיות מתכת' },
+  { src: '/images/drawer-open.jpg', alt: 'מגירה פתוחה עם פרזול פנימי' },
+  { src: '/images/sink-drawer.jpg', alt: 'פתרון אחסון מתחת לכיור' },
+  { src: '/images/pastries.jpg', alt: 'משטח אבן במטבח מעוצב' },
+  { src: '/images/styling-vases.jpg', alt: 'פרט עיצובי על משטח במטבח' },
 ] as const
 
 export const HERO_IMAGE = GALLERY_SLIDES[0]
 export const EDITORIAL_IMAGE = GALLERY_SLIDES[1]
+
+/** Featured works on home — client photos only */
+export const HOME_FEATURED = [
+  GALLERY_SLIDES[0],
+  GALLERY_SLIDES[1],
+  GALLERY_SLIDES[2],
+  GALLERY_SLIDES[3],
+] as const
+
+export const TRUST_POINTS = [
+  {
+    title: 'תכנון אישי',
+    text: 'מעצבת מקצועית מלווה כל פרויקט — מהבנת הצרכים ועד לפרט האחרון.',
+  },
+  {
+    title: 'פרזול BLUM',
+    text: 'עובדים עם BLUM בפרזול. במגירות בעיקר BLUM, וניתן להציע חלופות לפי תקציב.',
+  },
+  {
+    title: 'שירות בכל הארץ',
+    text: 'ליווי והתקנה בכל הארץ. אין אולם תצוגה — הפגישה מתקיימת לפי תיאום.',
+  },
+  {
+    title: 'לוחות זמנים ברורים',
+    text: 'לאחר אישור התכנון והחומרים נקבעים שלבי ביצוע והתקנה בשקיפות.',
+  },
+] as const
+
+/**
+ * Placeholder testimonials — replace with real client quotes when available.
+ * Do NOT present these as verified Google reviews.
+ */
+export const TESTIMONIALS_PLACEHOLDER = [
+  {
+    quote: 'התכנון היה מדויק לצרכים שלנו, והתוצאה נראית ומרגישה כמו מטבח שנבנה לבית.',
+    attribution: 'לקוח/ה — להחלפה בציטוט אמיתי',
+  },
+  {
+    quote: 'ליווי צמוד לאורך כל התהליך, מהבחירות ועד ההתקנה. שקט נפשי מקצועי.',
+    attribution: 'לקוח/ה — להחלפה בציטוט אמיתי',
+  },
+] as const
+
+export const PRICE_FACTORS = [
+  'מידות החלל ומורכבות התכנון',
+  'סוג החזיתות והגימור (צבע בתנור, פורמיקה, אקריל ועוד)',
+  'כמות האחסון והפרזול (כולל BLUM)',
+  'עבודות נגרות נוספות מעבר למטבח',
+  'לוחות זמנים ודרישות התקנה באתר',
+] as const
+
+export const CARPENTRY_POINTS = [
+  {
+    title: 'פתרונות לפי החלל',
+    text: 'ארונות גבוהים, פינות ישיבה, ויטרינות ואחסון נסתר — כל פתרון נגזר מהמדידות ומהרגלי השימוש.',
+  },
+  {
+    title: 'דיוק בביצוע',
+    text: 'דגש על חיבורים נקיים, יישור מדויק וגימור שמחזיק לאורך שנים.',
+  },
+  {
+    title: 'פונקציונליות יומיומית',
+    text: 'מגירות, מחיצות פנימיות ופתרונות אחסון שמפשטים את השימוש השוטף במטבח.',
+  },
+] as const
+
+export const MATERIALS_DETAIL = [
+  {
+    name: 'צבע בתנור',
+    text: 'גימור אחיד ועמיד, מתאים לחזיתות מודרניות ומינימליסטיות.',
+  },
+  {
+    name: 'פורמיקה',
+    text: 'מגוון טקסטורות וגוונים, איזון בין מראה לתחזוקה נוחה.',
+  },
+  {
+    name: 'אקריל',
+    text: 'משטח חלק עם נוכחות חזקה של אור והשתקפות.',
+  },
+  {
+    name: 'פולימר',
+    text: 'עמידות וגימור עקבי לפרויקטים שדורשים חוזק וניקיון קל.',
+  },
+  {
+    name: 'זכוכית וויטרינות',
+    text: 'תצוגה מוארת לאחסון נבחר — שילוב עיצובי ופונקציונלי.',
+  },
+] as const

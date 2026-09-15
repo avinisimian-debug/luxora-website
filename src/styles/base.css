@@ -107,7 +107,11 @@ ul {
 }
 
 .section {
-  padding-block: clamp(4.5rem, 10vw, 8rem);
+  padding-block: clamp(3.75rem, 8vw, 6.5rem);
+}
+
+.section--tight-top {
+  padding-top: clamp(2rem, 4vw, 3rem);
 }
 
 .section--sand {
@@ -121,11 +125,19 @@ ul {
 .eyebrow {
   display: inline-block;
   font-size: var(--text-micro);
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-walnut);
+  color: var(--color-walnut-deep);
   margin-bottom: 1rem;
+}
+
+.section-head {
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.section-lead--compact {
+  max-width: 36em;
 }
 
 .section-title {
@@ -144,7 +156,7 @@ ul {
 .prose {
   display: grid;
   gap: 1.35rem;
-  color: var(--color-ink-muted);
+  color: var(--color-ink);
   font-size: 1.08rem;
   line-height: 1.8;
   max-width: 38em;

@@ -5,10 +5,11 @@
  */
 export const MEDIA = {
   hero: {
-    src: '/images/hero.jpg',
+    /** Optimized JPEG (~222KB) — prefer over original hero.jpg (~700KB) */
+    src: '/images/hero-opt.jpg',
     alt: 'מטבח מודרני יוקרתי עם חזיתות בהירות, ויטרינות מוארות ותאורה אדריכלית',
-    width: 2400,
-    height: 1600,
+    width: 1920,
+    height: 1280,
   },
   about: {
     src: '/images/kitchen-wide.jpg',
@@ -18,7 +19,7 @@ export const MEDIA = {
   },
   cta: {
     src: '/images/corner-fridge.jpg',
-    alt: '',
+    alt: 'פינת מטבח עם נגרות גבוהה ומקרר משולב בחזיתות בהתאמה אישית',
     width: 1600,
     height: 2400,
   },
