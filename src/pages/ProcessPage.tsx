@@ -8,10 +8,10 @@ export function ProcessPage() {
       <header className="page-intro page-intro--compact">
         <div className="container">
           <p className="eyebrow">תהליך</p>
-          <h1>מתכנון ראשוני עד הפרט האחרון</h1>
+          <h1>תהליך העבודה והליווי האישי</h1>
           <p className="page-intro__lead">
-            מעטפת מלאה משלב הרעיון והתכנון ועד למוצר המוגמר — עם לוחות זמנים
-            ברורים וליווי לאורך הדרך.
+            מעטפת מלאה מהרעיון והתכנון ועד למוצר המוגמר. לכל לקוח יש מעצבת
+            מקצועית שמעניקה שירות אישי וליווי צמוד לאורך תהליך התכנון.
           </p>
         </div>
       </header>
@@ -33,23 +33,13 @@ export function ProcessPage() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal>
-            <aside className="process-aside">
-              <h2>אחרי אישור התכנון</h2>
-              <p>
-                לאחר בחירת החומרים והגימורים נקבעים שלבי הייצור וההתקנה. הליווי
-                נמשך עד למסירת המטבח — כולל התאמות באתר לפי הצורך.
-              </p>
-            </aside>
-          </Reveal>
         </div>
       </section>
 
       <section className="page-cta">
         <div className="container page-cta__inner">
-          <h2>מתחילים בתכנון?</h2>
-          <p>נחזור תוך יום עסקים. אפשר גם לכתוב ב־WhatsApp.</p>
+          <h2>לתיאום פגישת תכנון</h2>
+          <p>שירות בכל הארץ.</p>
           <div className="btn-row">
             <Link className="btn btn--primary" to="/contact">
               לתיאום פגישת תכנון

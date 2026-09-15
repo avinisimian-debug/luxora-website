@@ -1,55 +1,53 @@
 /**
- * LUXORA media registry — client-supplied project photos only.
- * To replace an image: drop a new file in /public/images and update the path here.
- * Do not point these entries at stock/Pinterest URLs presented as LUXORA work.
+ * LUXORA media registry.
+ * Images are shown as visual inspiration — not as named client projects.
  */
 export const MEDIA = {
   hero: {
-    /** Optimized JPEG (~222KB) — prefer over original hero.jpg (~700KB) */
     src: '/images/hero-opt.jpg',
-    alt: 'מטבח מודרני יוקרתי עם חזיתות בהירות, ויטרינות מוארות ותאורה אדריכלית',
+    alt: 'תמונת השראה — מטבח עם חזיתות בהירות וויטרינות',
     width: 1920,
     height: 1280,
   },
   about: {
     src: '/images/kitchen-wide.jpg',
-    alt: 'מטבח בהתאמה אישית עם ויטרינות מוארות וחזיתות מחורצות',
+    alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות מחורצות',
     width: 1600,
     height: 2400,
   },
   cta: {
     src: '/images/corner-fridge.jpg',
-    alt: 'פינת מטבח עם נגרות גבוהה ומקרר משולב בחזיתות בהתאמה אישית',
+    alt: 'תמונת השראה — פינת מטבח עם נגרות גבוהה',
     width: 1600,
     height: 2400,
   },
   atmosphere: {
     src: '/images/vitrine-pastries.jpg',
-    alt: 'פרט מטבח — ויטרינה מוארת, משטח אבן וחזית מחורצת',
+    alt: 'תמונת השראה — ויטרינה ומשטח עבודה',
     width: 1600,
     height: 2400,
   },
   materialsMain: {
     src: '/images/fluted-detail.jpg',
-    alt: 'פרט חזית מחורצת בגימור איכותי',
+    alt: 'תמונת השראה — פרט חזית מחורצת',
     width: 998,
     height: 1498,
   },
   materialsDrawer: {
     src: '/images/drawers.jpg',
-    alt: 'מגירות עם ידיות מתכת וגימור מדויק',
+    alt: 'תמונת השראה — מגירות מטבח',
     width: 998,
     height: 1498,
   },
   materialsHardware: {
     src: '/images/drawer-open.jpg',
-    alt: 'מגירה פתוחה עם פרזול פנימי איכותי',
+    alt: 'תמונת השראה — מגירה פתוחה',
     width: 998,
     height: 1498,
   },
   stoneLifestyle: {
     src: '/images/pastries.jpg',
-    alt: 'משטח אבן במטבח — אווירת חומרים וחלל מעוצב',
+    alt: 'תמונת השראה — משטח במטבח',
     width: 1600,
     height: 2400,
   },

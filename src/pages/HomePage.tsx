@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom'
 import {
   BRAND,
   CONTACT,
+  CUSTOMIZATION_INTRO,
+  CUSTOMIZATION_POINTS,
+  DIFFERENTIATORS,
   EDITORIAL_IMAGE,
   HOME_FEATURED,
-  PRICE_FACTORS,
-  TESTIMONIALS_PLACEHOLDER,
-  TRUST_POINTS,
+  KITCHEN_STYLES,
+  STYLES_INTRO,
 } from '../data/content'
 import { MEDIA } from '../data/media'
 import { BrandLogo } from '../components/BrandLogo'
@@ -61,7 +63,7 @@ export function HomePage() {
           </Reveal>
           <Reveal delayMs={80}>
             <div className="editorial__copy">
-              <p className="eyebrow">אודות</p>
+              <p className="eyebrow">הגישה של לקסורה</p>
               <h2 className="section-title">{BRAND.full}</h2>
               <p className="section-lead">{BRAND.intro}</p>
               <div className="btn-row">
@@ -74,16 +76,53 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="featured-title">
+      <section className="section" aria-labelledby="custom-title">
+        <div className="container container--narrow">
+          <Reveal>
+            <p className="eyebrow">התאמה אישית</p>
+            <h2 id="custom-title" className="section-title">
+              מטבחים בהתאמה אישית
+            </h2>
+            <p className="section-lead">{CUSTOMIZATION_INTRO}</p>
+            <ul className="price-list">
+              {CUSTOMIZATION_POINTS.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--ivory" aria-labelledby="styles-title">
+        <div className="container">
+          <Reveal>
+            <p className="eyebrow">סוגי מטבחים</p>
+            <h2 id="styles-title" className="section-title">
+              סגנונות
+            </h2>
+            <p className="section-lead">{STYLES_INTRO}</p>
+            <ul className="styles-strip">
+              {KITCHEN_STYLES.map((style, i) => (
+                <li key={style.id}>
+                  {style.title}
+                  <span>{String(i + 1).padStart(2, '0')}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="gallery-preview-title">
         <div className="container">
           <Reveal>
             <div className="section-head">
-              <p className="eyebrow">המטבחים שלנו</p>
-              <h2 id="featured-title" className="section-title">
-                מבחר מהעבודות
+              <p className="eyebrow">גלריה</p>
+              <h2 id="gallery-preview-title" className="section-title">
+                תמונות השראה
               </h2>
               <p className="section-lead">
-                תמונות מפרויקטים של לקוחות — כל מטבח מתוכנן ומותאם אישית.
+                תמונות להמחשת כיווני עיצוב — לא מוצגות כפרויקטים מזוהים של לקוחות.
               </p>
             </div>
           </Reveal>
@@ -114,18 +153,18 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section section--ivory" aria-labelledby="trust-title">
+      <section className="section section--ivory" aria-labelledby="diff-title">
         <div className="container">
           <Reveal>
             <div className="section-head">
-              <p className="eyebrow">למה לקסורה</p>
-              <h2 id="trust-title" className="section-title">
-                תכנון, ביצוע וליווי
+              <p className="eyebrow">מה מייחד</p>
+              <h2 id="diff-title" className="section-title">
+                היתרונות של לקסורה
               </h2>
             </div>
           </Reveal>
           <ul className="trust-grid">
-            {TRUST_POINTS.map((point, i) => (
+            {DIFFERENTIATORS.map((point, i) => (
               <li key={point.title}>
                 <Reveal delayMs={i * 40}>
                   <article className="trust-item">
@@ -136,58 +175,6 @@ export function HomePage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="price-title">
-        <div className="container container--narrow">
-          <Reveal>
-            <p className="eyebrow">שקיפות</p>
-            <h2 id="price-title" className="section-title">
-              מה משפיע על המחיר
-            </h2>
-            <p className="section-lead">
-              אין מחירון אחיד — כל פרויקט מתומחר לפי התכנון והחומרים. הגורמים
-              העיקריים:
-            </p>
-            <ul className="factor-list">
-              {PRICE_FACTORS.map((factor) => (
-                <li key={factor}>{factor}</li>
-              ))}
-            </ul>
-            <div className="btn-row">
-              <Link className="btn btn--primary" to="/contact">
-                לתיאום פגישת תכנון
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Placeholder quotes — replace with real testimonials; not Google reviews */}
-      <section className="section section--sand" aria-labelledby="voices-title">
-        <div className="container">
-          <Reveal>
-            <div className="section-head">
-              <p className="eyebrow">קולות מהשטח</p>
-              <h2 id="voices-title" className="section-title">
-                המלצות (טיוטה)
-              </h2>
-              <p className="section-lead section-lead--compact">
-                ציטוטים לדוגמה להחלפה — אינם ביקורות מאומתות מגוגל.
-              </p>
-            </div>
-          </Reveal>
-          <div className="quotes-grid">
-            {TESTIMONIALS_PLACEHOLDER.map((item, i) => (
-              <Reveal key={item.attribution} delayMs={i * 60}>
-                <blockquote className="quote-block">
-                  <p>{item.quote}</p>
-                  <footer>{item.attribution}</footer>
-                </blockquote>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -204,7 +191,7 @@ export function HomePage() {
                 <span>נגרות</span>
               </Link>
               <Link to="/materials">
-                חומרים וגימורים
+                חומרים וחזיתות
                 <span>חומרים</span>
               </Link>
               <Link to="/process">
@@ -235,7 +222,7 @@ export function HomePage() {
         <div className="container cta-band__inner">
           <Reveal>
             <h2 className="section-title">{BRAND.tagline}</h2>
-            <p className="section-lead">שירות בכל הארץ. נחזור תוך יום עסקים.</p>
+            <p className="section-lead">שירות בכל הארץ.</p>
             <div className="btn-row">
               <Link className="btn btn--primary" to="/contact">
                 לתיאום פגישת תכנון

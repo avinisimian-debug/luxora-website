@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CONTACT, HARDWARE_NOTE, MATERIALS_DETAIL } from '../data/content'
+import { CONTACT, HARDWARE_NOTE, MATERIALS } from '../data/content'
 import { MEDIA } from '../data/media'
 import { Reveal } from '../components/Reveal'
 
@@ -9,9 +9,9 @@ export function MaterialsPage() {
       <header className="page-intro page-intro--compact">
         <div className="container">
           <p className="eyebrow">חומרים</p>
-          <h1>חומרים וגימורים</h1>
+          <h1>חומרים וחזיתות</h1>
           <p className="page-intro__lead">
-            בחירת חומרים וגימור ברמה גבוהה — בהתאם לסגנון, לתחזוקה ולתקציב.
+            בחירת חומרים וגימור ברמה גבוהה — כחלק מתהליך תכנון אישי.
           </p>
         </div>
       </header>
@@ -32,12 +32,9 @@ export function MaterialsPage() {
               </div>
             </Reveal>
             <Reveal delayMs={50}>
-              <ul className="materials-detail">
-                {MATERIALS_DETAIL.map((item) => (
-                  <li key={item.name}>
-                    <h3>{item.name}</h3>
-                    <p>{item.text}</p>
-                  </li>
+              <ul className="materials-list">
+                {MATERIALS.map((name) => (
+                  <li key={name}>{name}</li>
                 ))}
               </ul>
             </Reveal>
@@ -82,8 +79,8 @@ export function MaterialsPage() {
 
       <section className="page-cta">
         <div className="container page-cta__inner">
-          <h2>רוצים לבחור חומרים יחד?</h2>
-          <p>נלווה אתכם בבחירת הגימורים שמתאימים לחלל ולשימוש.</p>
+          <h2>לתיאום פגישת תכנון</h2>
+          <p>שירות בכל הארץ.</p>
           <div className="btn-row">
             <Link className="btn btn--primary" to="/contact">
               לתיאום פגישת תכנון

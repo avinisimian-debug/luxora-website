@@ -1281,11 +1281,9 @@ body.menu-open .whatsapp-fab {
   color: var(--color-ivory-soft);
 }
 
-.contact-sla {
-  font-size: 1.05rem;
-  color: var(--color-ink);
-  line-height: 1.65;
-  max-width: 28em;
+.cinema__empty {
+  padding: 4rem var(--gutter);
+  color: var(--color-ivory-soft);
 }
 
 .contact-form--success {

@@ -91,7 +91,7 @@ export function ContactPage() {
           <Reveal>
             <div>
               <p className="contact-sla">
-                נחזור אליכם תוך יום עסקים — בטלפון, במייל או ב־WhatsApp.
+                מטבחים ונגרות בהתאמה אישית. שירות בכל הארץ.
               </p>
               <div className="contact-links">
                 <a href={CONTACT.phoneHref}>
@@ -119,7 +119,7 @@ export function ContactPage() {
               <div className="contact-form contact-form--success" role="status">
                 <h2>הפנייה התקבלה</h2>
                 <p className="form-status form-status--ok">
-                  הפרטים נשלחו בהצלחה. נחזור אליכם תוך יום עסקים.
+                  הפרטים נשלחו בהצלחה.
                 </p>
                 <div className="form-actions">
                   <button
@@ -138,7 +138,7 @@ export function ContactPage() {
               <form className="contact-form" onSubmit={onSubmit} noValidate>
                 <h2>יצירת קשר</h2>
                 <p className="contact-form__hint">
-                  השאירו פרטים — הפנייה תגיע אלינו למייל. נחזור תוך יום עסקים.
+                  השאירו פרטים — הפנייה תגיע אלינו למייל {CONTACT.email}.
                 </p>
 
                 <div className="hp-field" aria-hidden="true">

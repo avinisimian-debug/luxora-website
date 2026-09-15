@@ -1,5 +1,6 @@
 /**
- * Content from client brief / business document only.
+ * LUXORA — SOURCE OF TRUTH only.
+ * Do not invent claims, numbers, testimonials, materials, or styles.
  */
 export const CONTACT = {
   phoneDisplay: '052-719-0080',
@@ -21,9 +22,12 @@ export const BRAND = {
   field: 'מטבחים ונגרות בהתאמה אישית',
   intro:
     'לקסורה היא חברת מטבחים ונגרות בהתאמה אישית, המשלבת בין תכנון מדויק, עיצוב מוקפד ואיכות בלתי מתפשרת.',
+  belief:
+    'אנחנו מאמינים שמטבח טוב צריך להיות הרבה מעבר ליפה. הוא צריך להתאים לאנשים שחיים בו, לאופן שבו הם משתמשים בחלל ולצרכים המשתנים לאורך השנים.',
+  craft:
+    'מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות, אנחנו שמים דגש על דיוק, פונקציונליות, בחירת חומרים וגימור ברמה גבוהה. כל פרויקט מתוכנן באופן אישי, מתוך הבנה שאין שני בתים זהים ואין שני לקוחות עם אותם צרכים.',
 } as const
 
-/** Clean 7-item nav — kitchen types live under gallery page */
 export const NAV = [
   { to: '/', label: 'ראשי', end: true },
   { to: '/about', label: 'אודות' },
@@ -34,27 +38,74 @@ export const NAV = [
   { to: '/contact', label: 'יצירת קשר' },
 ] as const
 
+/** Official kitchen styles only */
 export const KITCHEN_STYLES = [
-  { id: 'modern', title: 'מטבחים מודרניים' },
-  { id: 'minimal', title: 'מטבחים מינימליסטיים' },
-  { id: 'classic', title: 'מטבחים קלאסיים' },
-  { id: 'rustic', title: 'מטבחים כפריים' },
+  { id: 'modern', title: 'מטבח מודרני' },
+  { id: 'minimal', title: 'מטבח מינימליסטי' },
+  { id: 'classic', title: 'מטבח קלאסי' },
+  { id: 'rustic', title: 'מטבח כפרי' },
 ] as const
 
 export const STYLES_INTRO =
-  'מטבחים בהתאמה אישית לכל חלל ולכל סגנון.' as const
+  'מטבחים בהתאמה אישית לכל חלל וכל סגנון.' as const
 
 export const MATERIALS = [
   'צבע בתנור',
   'פורמיקה',
   'אקריל',
   'פולימר',
-  'זכוכית וויטרינות',
+  'זכוכית / ויטרינות',
 ] as const
 
+/** Official hardware wording — Blum primary; Turkish option for significant cost reduction */
 export const HARDWARE_NOTE =
-  'עובדים עם BLUM בפרזול. במגירות בעיקר BLUM, וניתן להציע חלופות בהתאם לתקציב.' as const
+  'לקסורה עובדת בעיקר עם פרזול בלום, ובפרט במגירות. במקרים שבהם הלקוח מעוניין בהוזלה משמעותית בעלות המגירות, ניתן להשתמש בחברות טורקיות.' as const
 
+/** Official differentiators only (section 4) */
+export const DIFFERENTIATORS = [
+  {
+    title: 'מעטפת מלאה',
+    text: 'מהרעיון והתכנון ועד למוצר המוגמר.',
+  },
+  {
+    title: 'ליווי אישי',
+    text: 'לכל לקוח יש מעצבת מקצועית שמעניקה שירות אישי וליווי צמוד לאורך תהליך התכנון.',
+  },
+  {
+    title: 'הבנת צרכי הלקוח',
+    text: 'התהליך כולל הבנת הצרכים והרגלי השימוש, בחירת החומרים וירידה לפרטים הקטנים.',
+  },
+  {
+    title: 'נגרות בהתאמה אישית',
+    text: 'כל מטבח וכל פתרון נגרות מתוכננים במיוחד עבור החלל והצרכים של הלקוח.',
+  },
+  {
+    title: 'תכנון וביצוע',
+    text: 'שילוב בין עיצוב מקצועי, שירות אישי, נגרות בהתאמה אישית וביצוע איכותי.',
+  },
+  {
+    title: 'מחיר הוגן',
+    text: 'הקפדה על מחירים הוגנים ותחרותיים, עם דגש על תמורה גבוהה למחיר.',
+  },
+  {
+    title: 'פתרון אישי ומדויק',
+    text: 'השילוב בין כלל המרכיבים מאפשר להעניק ללקוח פתרון שלם, אישי ומדויק.',
+  },
+] as const
+
+export const CUSTOMIZATION_INTRO =
+  'התאמה אישית היא חלק מרכזי מההתמחות של לקסורה.' as const
+
+export const CUSTOMIZATION_POINTS = [
+  'כל מטבח מתוכנן בהתאם לחלל.',
+  'התכנון מתחשב בצרכים של הלקוח.',
+  'התכנון מתחשב בהרגלי השימוש.',
+  'בחירת החומרים נעשית כחלק מתהליך אישי.',
+  'כל פרויקט מתוכנן באופן אישי.',
+  'אין שני בתים זהים ואין שני לקוחות עם אותם צרכים.',
+] as const
+
+/** Process derived only from official personal-design / full-envelope wording */
 export const PROCESS_STEPS = [
   {
     step: '01',
@@ -63,136 +114,61 @@ export const PROCESS_STEPS = [
   },
   {
     step: '02',
-    title: 'תכנון מדויק',
-    text: 'תכנון מדויק ועיצוב מוקפד. כל פרויקט מתוכנן באופן אישי, מתוך הבנה שאין שני בתים זהים ואין שני לקוחות עם אותם צרכים.',
+    title: 'תכנון אישי',
+    text: 'כל פרויקט מתוכנן באופן אישי, מתוך הבנה שאין שני בתים זהים ואין שני לקוחות עם אותם צרכים.',
   },
   {
     step: '03',
-    title: 'בחירת חומרים וגימורים',
-    text: 'בחירת חומרים וגימור ברמה גבוהה — עד לבחירת החומרים ולירידה לפרטים הקטנים.',
+    title: 'בחירת חומרים ופרטים',
+    text: 'בחירת החומרים וירידה לפרטים הקטנים — כחלק מתהליך אישי עם מעצבת מקצועית.',
   },
   {
     step: '04',
     title: 'נגרות בהתאמה אישית',
-    text: 'מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות, עם דגש על דיוק ופונקציונליות. כל מטבח וכל פתרון נגרות מתוכננים במיוחד עבור החלל והצרכים של הלקוח.',
+    text: 'מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות — עם דגש על דיוק, פונקציונליות וגימור ברמה גבוהה.',
   },
   {
     step: '05',
     title: 'המוצר המוגמר',
-    text: 'מעטפת מלאה משלב הרעיון והתכנון ועד למוצר המוגמר.',
+    text: 'מעטפת מלאה מהרעיון והתכנון ועד למוצר המוגמר.',
   },
 ] as const
 
+/** Contact form options — based on official offerings only */
 export const PROJECT_TYPES = [
-  'מטבח חדש',
-  'שיפוץ מטבח',
+  'מטבח מודרני',
+  'מטבח מינימליסטי',
+  'מטבח קלאסי',
+  'מטבח כפרי',
   'נגרות בהתאמה אישית',
-  'עדיין לא בטוח/ה',
+  'אחר / עדיין לא בטוח/ה',
 ] as const
 
-/** Client-supplied photos only — swap via this list */
+/**
+ * Gallery images — visual inspiration only.
+ * Do not present as named client projects unless officially confirmed.
+ */
 export const GALLERY_SLIDES = [
-  { src: '/images/hero-opt.jpg', alt: 'מטבח מודרני עם ויטרינות מוארות וחזיתות בהירות' },
-  { src: '/images/kitchen-wide.jpg', alt: 'מטבח רחב עם ויטרינות, חזיתות מחורצות ומשטח אבן' },
-  { src: '/images/corner-fridge.jpg', alt: 'פינת מטבח עם נגרות גבוהה ומקרר משולב' },
-  { src: '/images/breakfast-bar.jpg', alt: 'פינת ישיבה עם נגרות ומשטח עבודה' },
-  { src: '/images/vitrine-pastries.jpg', alt: 'ויטרינה מוארת ליד משטח עבודה' },
-  { src: '/images/corner-detail.jpg', alt: 'פרט חזית ואבן בפינת המטבח' },
-  { src: '/images/fluted-detail.jpg', alt: 'פרט חזית מחורצת בגימור עדין' },
-  { src: '/images/drawers.jpg', alt: 'מגירות מטבח עם ידיות מתכת' },
-  { src: '/images/drawer-open.jpg', alt: 'מגירה פתוחה עם פרזול פנימי' },
-  { src: '/images/sink-drawer.jpg', alt: 'פתרון אחסון מתחת לכיור' },
-  { src: '/images/pastries.jpg', alt: 'משטח אבן במטבח מעוצב' },
-  { src: '/images/styling-vases.jpg', alt: 'פרט עיצובי על משטח במטבח' },
+  { src: '/images/hero-opt.jpg', alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות בהירות' },
+  { src: '/images/kitchen-wide.jpg', alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות מחורצות' },
+  { src: '/images/corner-fridge.jpg', alt: 'תמונת השראה — פינת מטבח עם נגרות גבוהה' },
+  { src: '/images/breakfast-bar.jpg', alt: 'תמונת השראה — פינת ישיבה ונגרות' },
+  { src: '/images/vitrine-pastries.jpg', alt: 'תמונת השראה — ויטרינה ומשטח עבודה' },
+  { src: '/images/corner-detail.jpg', alt: 'תמונת השראה — פרט חזית ומשטח' },
+  { src: '/images/fluted-detail.jpg', alt: 'תמונת השראה — פרט חזית מחורצת' },
+  { src: '/images/drawers.jpg', alt: 'תמונת השראה — מגירות מטבח' },
+  { src: '/images/drawer-open.jpg', alt: 'תמונת השראה — מגירה פתוחה' },
+  { src: '/images/sink-drawer.jpg', alt: 'תמונת השראה — פתרון אחסון במטבח' },
+  { src: '/images/pastries.jpg', alt: 'תמונת השראה — משטח במטבח' },
+  { src: '/images/styling-vases.jpg', alt: 'תמונת השראה — פרט עיצובי בחלל' },
 ] as const
 
 export const HERO_IMAGE = GALLERY_SLIDES[0]
 export const EDITORIAL_IMAGE = GALLERY_SLIDES[1]
 
-/** Featured works on home — client photos only */
 export const HOME_FEATURED = [
   GALLERY_SLIDES[0],
   GALLERY_SLIDES[1],
   GALLERY_SLIDES[2],
   GALLERY_SLIDES[3],
-] as const
-
-export const TRUST_POINTS = [
-  {
-    title: 'תכנון אישי',
-    text: 'מעצבת מקצועית מלווה כל פרויקט — מהבנת הצרכים ועד לפרט האחרון.',
-  },
-  {
-    title: 'פרזול BLUM',
-    text: 'עובדים עם BLUM בפרזול. במגירות בעיקר BLUM, וניתן להציע חלופות לפי תקציב.',
-  },
-  {
-    title: 'שירות בכל הארץ',
-    text: 'ליווי והתקנה בכל הארץ. אין אולם תצוגה — הפגישה מתקיימת לפי תיאום.',
-  },
-  {
-    title: 'לוחות זמנים ברורים',
-    text: 'לאחר אישור התכנון והחומרים נקבעים שלבי ביצוע והתקנה בשקיפות.',
-  },
-] as const
-
-/**
- * Placeholder testimonials — replace with real client quotes when available.
- * Do NOT present these as verified Google reviews.
- */
-export const TESTIMONIALS_PLACEHOLDER = [
-  {
-    quote: 'התכנון היה מדויק לצרכים שלנו, והתוצאה נראית ומרגישה כמו מטבח שנבנה לבית.',
-    attribution: 'לקוח/ה — להחלפה בציטוט אמיתי',
-  },
-  {
-    quote: 'ליווי צמוד לאורך כל התהליך, מהבחירות ועד ההתקנה. שקט נפשי מקצועי.',
-    attribution: 'לקוח/ה — להחלפה בציטוט אמיתי',
-  },
-] as const
-
-export const PRICE_FACTORS = [
-  'מידות החלל ומורכבות התכנון',
-  'סוג החזיתות והגימור (צבע בתנור, פורמיקה, אקריל ועוד)',
-  'כמות האחסון והפרזול (כולל BLUM)',
-  'עבודות נגרות נוספות מעבר למטבח',
-  'לוחות זמנים ודרישות התקנה באתר',
-] as const
-
-export const CARPENTRY_POINTS = [
-  {
-    title: 'פתרונות לפי החלל',
-    text: 'ארונות גבוהים, פינות ישיבה, ויטרינות ואחסון נסתר — כל פתרון נגזר מהמדידות ומהרגלי השימוש.',
-  },
-  {
-    title: 'דיוק בביצוע',
-    text: 'דגש על חיבורים נקיים, יישור מדויק וגימור שמחזיק לאורך שנים.',
-  },
-  {
-    title: 'פונקציונליות יומיומית',
-    text: 'מגירות, מחיצות פנימיות ופתרונות אחסון שמפשטים את השימוש השוטף במטבח.',
-  },
-] as const
-
-export const MATERIALS_DETAIL = [
-  {
-    name: 'צבע בתנור',
-    text: 'גימור אחיד ועמיד, מתאים לחזיתות מודרניות ומינימליסטיות.',
-  },
-  {
-    name: 'פורמיקה',
-    text: 'מגוון טקסטורות וגוונים, איזון בין מראה לתחזוקה נוחה.',
-  },
-  {
-    name: 'אקריל',
-    text: 'משטח חלק עם נוכחות חזקה של אור והשתקפות.',
-  },
-  {
-    name: 'פולימר',
-    text: 'עמידות וגימור עקבי לפרויקטים שדורשים חוזק וניקיון קל.',
-  },
-  {
-    name: 'זכוכית וויטרינות',
-    text: 'תצוגה מוארת לאחסון נבחר — שילוב עיצובי ופונקציונלי.',
-  },
 ] as const

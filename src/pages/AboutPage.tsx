@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom'
-import { BRAND } from '../data/content'
+import {
+  BRAND,
+  CONTACT,
+  CUSTOMIZATION_INTRO,
+  CUSTOMIZATION_POINTS,
+  DIFFERENTIATORS,
+} from '../data/content'
 import { Reveal } from '../components/Reveal'
 
 export function AboutPage() {
   return (
     <>
-      <header className="page-intro">
+      <header className="page-intro page-intro--compact">
         <div className="container">
           <p className="eyebrow">אודות</p>
           <h1>{BRAND.tagline}</h1>
@@ -13,47 +19,72 @@ export function AboutPage() {
         </div>
       </header>
 
-      <section className="section">
+      <section className="section section--tight-top">
         <div className="container--narrow">
           <Reveal>
             <div className="prose">
               <p>{BRAND.intro}</p>
-              <p>
-                אנחנו מאמינים שמטבח טוב צריך להיות הרבה מעבר ליפה. הוא צריך
-                להתאים לאנשים שחיים בו, לאופן שבו הם משתמשים בחלל ולצרכים
-                המשתנים לאורך השנים.
-              </p>
-              <p>
-                מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות, אנחנו שמים דגש על
-                דיוק, פונקציונליות, בחירת חומרים וגימור ברמה גבוהה. כל פרויקט
-                מתוכנן באופן אישי, מתוך הבנה שאין שני בתים זהים ואין שני לקוחות
-                עם אותם צרכים.
-              </p>
-              <p>
-                לכל לקוח יש מעצבת מקצועית שמעניקה שירות אישי וליווי צמוד לאורך
-                תהליך התכנון, החל מהבנת הצרכים והרגלי השימוש ועד לבחירת החומרים
-                ולירידה לפרטים הקטנים.
-              </p>
-              <p>
-                אנחנו מעניקים מעטפת מלאה, משלב הרעיון והתכנון ועד למוצר המוגמר.
-              </p>
-              <p>
-                לצד התכנון והביצוע, אנחנו מקפידים להציע מחירים הוגנים ותחרותיים
-                עם דגש על תמורה גבוהה למחיר.
-              </p>
-              <p>
-                השילוב בין עיצוב מקצועי, שירות אישי, נגרות בהתאמה אישית, ביצוע
-                איכותי ומחיר הוגן מאפשר לנו לתת ללקוח פתרון שלם, אישי ומדויק.
-              </p>
-              <p>שירות בכל הארץ. אין אולם תצוגה.</p>
+              <p>{BRAND.belief}</p>
+              <p>{BRAND.craft}</p>
+              <p>{BRAND.tagline}</p>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--ivory" aria-labelledby="about-custom">
+        <div className="container container--narrow">
+          <Reveal>
+            <p className="eyebrow">התאמה אישית</p>
+            <h2 id="about-custom" className="section-title">
+              ההתמחות של לקסורה
+            </h2>
+            <p className="section-lead">{CUSTOMIZATION_INTRO}</p>
+            <ul className="price-list">
+              {CUSTOMIZATION_POINTS.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="about-diff">
+        <div className="container">
+          <Reveal>
+            <p className="eyebrow">מה מייחד</p>
+            <h2 id="about-diff" className="section-title">
+              היתרונות של לקסורה
+            </h2>
+          </Reveal>
+          <ul className="trust-grid">
+            {DIFFERENTIATORS.map((point, i) => (
+              <li key={point.title}>
+                <Reveal delayMs={i * 30}>
+                  <article className="trust-item">
+                    <h3>{point.title}</h3>
+                    <p>{point.text}</p>
+                  </article>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+          <Reveal>
+            <p className="section-lead about-service-note">
+              שירות בכל הארץ. אין אולם תצוגה.
+            </p>
             <div className="btn-row">
               <Link className="btn btn--primary" to="/contact">
                 לתיאום פגישת תכנון
               </Link>
-              <Link className="btn btn--line" to="/process">
-                תהליך העבודה
-              </Link>
+              <a
+                className="btn btn--line"
+                href={CONTACT.whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp
+              </a>
             </div>
           </Reveal>
         </div>

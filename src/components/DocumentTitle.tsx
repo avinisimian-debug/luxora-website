@@ -6,7 +6,7 @@ const TITLES: Record<string, string> = {
   '/about': 'אודות | לקסורה – LUXORA',
   '/gallery': 'המטבחים שלנו | לקסורה – LUXORA',
   '/carpentry': 'נגרות בהתאמה אישית | לקסורה – LUXORA',
-  '/materials': 'חומרים וגימורים | לקסורה – LUXORA',
+  '/materials': 'חומרים וחזיתות | לקסורה – LUXORA',
   '/process': 'תהליך העבודה | לקסורה – LUXORA',
   '/contact': 'יצירת קשר | לקסורה – LUXORA',
 }

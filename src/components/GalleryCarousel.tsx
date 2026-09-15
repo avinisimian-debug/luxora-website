@@ -49,7 +49,7 @@ export function GalleryCarousel({ fullBleed = true }: Props) {
   }
 
   if (!slides.length) {
-    return <div className="cinema"><p className="container" style={{ padding: '4rem', color: '#fff' }}>הגלריה מוכנה להעלאת תמונות.</p></div>
+    return <div className="cinema"><p className="container cinema__empty">אין תמונות להצגה כרגע.</p></div>
   }
 
   return (

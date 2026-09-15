@@ -6,11 +6,13 @@ import { Reveal } from '../components/Reveal'
 export function GalleryPage() {
   return (
     <>
-      <header className="page-intro">
+      <header className="page-intro page-intro--compact">
         <div className="container">
           <p className="eyebrow">גלריה</p>
           <h1>המטבחים שלנו</h1>
-          <p className="page-intro__lead">מטבחים ונגרות בהתאמה אישית.</p>
+          <p className="page-intro__lead">
+            תמונות השראה למטבחים ונגרות בהתאמה אישית. {STYLES_INTRO}
+          </p>
         </div>
       </header>
 
