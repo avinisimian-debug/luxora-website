@@ -1,40 +1,42 @@
 :root {
-  --color-ivory: #f4f0e8;
-  --color-ivory-soft: #faf8f4;
-  --color-sand: #e6dccf;
-  --color-stone: #cfc4b6;
-  --color-walnut: #7a654c;
-  --color-walnut-deep: #5c4a38;
-  --color-charcoal: #1f1c1a;
-  --color-ink: #241f1c;
+  --color-ivory: #f3efe7;
+  --color-ivory-soft: #faf7f2;
+  --color-sand: #e8dfd2;
+  --color-stone: #d0c5b7;
+  --color-walnut: #756148;
+  --color-walnut-deep: #564534;
+  --color-charcoal: #1c1917;
+  --color-ink: #221e1b;
   --color-ink-muted: #4a433c;
   --color-ink-faint: #5c564e;
-  --color-metal: #2f2b28;
-  --color-metal-soft: #4a4440;
-  --color-brass: #a8843f;
-  --color-brass-soft: rgba(168, 132, 63, 0.35);
+  --color-metal: #2a2623;
+  --color-metal-soft: #433e3a;
+  --color-brass: #b08d4a;
+  --color-brass-soft: rgba(176, 141, 74, 0.28);
   --color-whatsapp: #25d366;
   --color-white: #ffffff;
 
   --font-display: 'Frank Ruhl Libre', Georgia, 'Times New Roman', serif;
   --font-body: 'Assistant', 'Segoe UI', Tahoma, sans-serif;
 
-  --text-hero: clamp(2.6rem, 6.5vw, 4.75rem);
-  --text-h1: clamp(2.2rem, 4.5vw, 3.5rem);
-  --text-h2: clamp(1.85rem, 3.2vw, 2.6rem);
-  --text-h3: clamp(1.25rem, 2vw, 1.6rem);
-  --text-lead: clamp(1.1rem, 1.7vw, 1.3rem);
+  --text-hero: clamp(2.45rem, 6.2vw, 4.35rem);
+  --text-h1: clamp(2.1rem, 4.2vw, 3.35rem);
+  --text-h2: clamp(1.75rem, 3vw, 2.55rem);
+  --text-h3: clamp(1.2rem, 1.8vw, 1.5rem);
+  --text-lead: clamp(1.08rem, 1.55vw, 1.28rem);
   --text-body: 1.0625rem;
   --text-small: 0.875rem;
-  --text-micro: 0.7rem;
+  --text-micro: 0.68rem;
 
-  --gutter: clamp(1.25rem, 4.5vw, 4rem);
-  --container: 76rem;
-  --container-wide: 100%;
-  --container-narrow: 38rem;
+  --gutter: clamp(1.35rem, 4.8vw, 4.5rem);
+  --container: 78rem;
+  --container-narrow: 40rem;
+  --section-y: clamp(4.25rem, 9vw, 7.5rem);
+  --section-y-tight: clamp(2.25rem, 4.5vw, 3.25rem);
 
-  --header-h: 4.75rem;
+  --header-h: 4.85rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --z-header: 100;
   --z-fab: 160;
 
@@ -43,6 +45,6 @@
 
 @media (max-width: 768px) {
   :root {
-    --header-h: 4.1rem;
+    --header-h: 4.15rem;
   }
 }

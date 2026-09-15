@@ -15,6 +15,8 @@ import { BrandLogo } from '../components/BrandLogo'
 import { Reveal } from '../components/Reveal'
 
 export function HomePage() {
+  const [heroFeature, ...sideFeatures] = HOME_FEATURED
+
   return (
     <>
       <section className="home-hero" aria-labelledby="hero-title">
@@ -34,6 +36,9 @@ export function HomePage() {
           <div className="home-hero__logo">
             <BrandLogo variant="hero" />
           </div>
+          <p className="home-hero__mark" aria-hidden="true">
+            {BRAND.nameEn}
+          </p>
           <h1 id="hero-title">{BRAND.tagline}</h1>
           <p className="home-hero__sub">{BRAND.field}</p>
           <div className="btn-row">
@@ -48,9 +53,9 @@ export function HomePage() {
       </section>
 
       <section className="section section--ivory">
-        <div className="container editorial">
+        <div className="container editorial editorial--wide-gap">
           <Reveal>
-            <div className="editorial__media">
+            <div className="editorial__media editorial__media--tall">
               <img
                 src={EDITORIAL_IMAGE.src}
                 alt={EDITORIAL_IMAGE.alt}
@@ -76,15 +81,19 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="custom-title">
-        <div className="container container--narrow">
+      <section className="section section--custom" aria-labelledby="custom-title">
+        <div className="container custom-split">
           <Reveal>
-            <p className="eyebrow">התאמה אישית</p>
-            <h2 id="custom-title" className="section-title">
-              מטבחים בהתאמה אישית
-            </h2>
-            <p className="section-lead">{CUSTOMIZATION_INTRO}</p>
-            <ul className="price-list">
+            <div className="custom-split__intro">
+              <p className="eyebrow">התאמה אישית</p>
+              <h2 id="custom-title" className="section-title section-title--wide">
+                מטבחים בהתאמה אישית
+              </h2>
+              <p className="custom-split__quote">{CUSTOMIZATION_INTRO}</p>
+            </div>
+          </Reveal>
+          <Reveal delayMs={60}>
+            <ul className="custom-list">
               {CUSTOMIZATION_POINTS.map((point) => (
                 <li key={point}>{point}</li>
               ))}
@@ -101,7 +110,7 @@ export function HomePage() {
               סגנונות
             </h2>
             <p className="section-lead">{STYLES_INTRO}</p>
-            <ul className="styles-strip">
+            <ul className="styles-strip styles-strip--editorial">
               {KITCHEN_STYLES.map((style, i) => (
                 <li key={style.id}>
                   {style.title}
@@ -126,22 +135,39 @@ export function HomePage() {
               </p>
             </div>
           </Reveal>
-          <div className="featured-grid">
-            {HOME_FEATURED.map((item, i) => (
-              <Reveal key={item.src} delayMs={i * 50}>
-                <Link to="/gallery" className="featured-card">
+          <div className="featured-mosaic">
+            {heroFeature ? (
+              <Reveal>
+                <Link to="/gallery" className="featured-card featured-card--hero">
                   <img
-                    src={item.src}
-                    alt={item.alt}
-                    width={1200}
-                    height={900}
+                    src={heroFeature.src}
+                    alt={heroFeature.alt}
+                    width={1400}
+                    height={1800}
                     loading="lazy"
                     decoding="async"
                   />
-                  <span className="featured-card__caption">{item.alt}</span>
+                  <span className="featured-card__caption">{heroFeature.alt}</span>
                 </Link>
               </Reveal>
-            ))}
+            ) : null}
+            <div className="featured-mosaic__side">
+              {sideFeatures.map((item, i) => (
+                <Reveal key={item.src} delayMs={i * 45}>
+                  <Link to="/gallery" className="featured-card">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      width={900}
+                      height={700}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span className="featured-card__caption">{item.alt}</span>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
           </div>
           <Reveal>
             <div className="btn-row">
@@ -163,24 +189,29 @@ export function HomePage() {
               </h2>
             </div>
           </Reveal>
-          <ul className="trust-grid">
+          <div className="diff-rail">
             {DIFFERENTIATORS.map((point, i) => (
-              <li key={point.title}>
-                <Reveal delayMs={i * 40}>
-                  <article className="trust-item">
+              <Reveal key={point.title} delayMs={i * 35}>
+                <article className="diff-item">
+                  <span className="diff-item__num" aria-hidden="true">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
                     <h3>{point.title}</h3>
                     <p>{point.text}</p>
-                  </article>
-                </Reveal>
-              </li>
+                  </div>
+                </article>
+              </Reveal>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--dest">
         <div className="container">
           <Reveal>
+            <p className="eyebrow">ניווט</p>
+            <h2 className="section-title section-title--wide">המשך בעמודים</h2>
             <nav className="destinations" aria-label="עמודי האתר">
               <Link to="/gallery">
                 המטבחים שלנו
@@ -221,6 +252,7 @@ export function HomePage() {
         </div>
         <div className="container cta-band__inner">
           <Reveal>
+            <p className="eyebrow eyebrow--on-dark">יצירת קשר</p>
             <h2 className="section-title">{BRAND.tagline}</h2>
             <p className="section-lead">שירות בכל הארץ.</p>
             <div className="btn-row">

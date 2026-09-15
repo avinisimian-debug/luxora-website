@@ -23,14 +23,25 @@ html {
   }
 }
 
+::selection {
+  background: rgba(176, 141, 74, 0.28);
+  color: var(--color-charcoal);
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--text-body);
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.75;
   color: var(--color-ink);
-  background: var(--color-ivory-soft);
+  background-color: var(--color-ivory-soft);
+  background-image:
+    radial-gradient(ellipse at 12% 0%, rgba(232, 223, 210, 0.55) 0%, transparent 48%),
+    radial-gradient(ellipse at 88% 18%, rgba(208, 197, 183, 0.28) 0%, transparent 42%);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -57,14 +68,16 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.18;
   margin: 0;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.018em;
   color: var(--color-charcoal);
+  text-wrap: balance;
 }
 
 p {
   margin: 0;
+  text-wrap: pretty;
 }
 
 ul {
@@ -107,33 +120,34 @@ ul {
 }
 
 .section {
-  padding-block: clamp(3.75rem, 8vw, 6.5rem);
+  padding-block: var(--section-y);
 }
 
 .section--tight-top {
-  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-top: var(--section-y-tight);
 }
 
 .section--sand {
-  background: var(--color-sand);
+  background: linear-gradient(180deg, var(--color-sand) 0%, #e2d8ca 100%);
 }
 
 .section--ivory {
-  background: var(--color-ivory);
+  background: linear-gradient(180deg, var(--color-ivory) 0%, #efe9df 100%);
 }
 
 .eyebrow {
   display: inline-block;
   font-size: var(--text-micro);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-walnut-deep);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .section-head {
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: clamp(2.25rem, 4.5vw, 3.25rem);
+  max-width: 40rem;
 }
 
 .section-lead--compact {
@@ -142,23 +156,23 @@ ul {
 
 .section-title {
   font-size: var(--text-h2);
-  max-width: 14ch;
+  max-width: 16ch;
 }
 
 .section-lead {
-  margin-top: 1.25rem;
+  margin-top: 1.35rem;
   font-size: var(--text-lead);
   color: var(--color-ink-muted);
-  max-width: 34em;
-  line-height: 1.65;
+  max-width: 36em;
+  line-height: 1.7;
 }
 
 .prose {
   display: grid;
-  gap: 1.35rem;
+  gap: 1.5rem;
   color: var(--color-ink);
-  font-size: 1.08rem;
-  line-height: 1.8;
+  font-size: clamp(1.05rem, 1.4vw, 1.15rem);
+  line-height: 1.85;
   max-width: 38em;
 }
 
@@ -171,18 +185,23 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3.25rem;
-  padding: 0.85rem 1.85rem;
+  min-height: 3.2rem;
+  padding: 0.85rem 1.9rem;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 1px;
   font-weight: 600;
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
   cursor: pointer;
   transition:
-    background 0.25s var(--ease),
-    color 0.25s var(--ease),
-    border-color 0.25s var(--ease);
+    background 0.3s var(--ease),
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn--primary {
@@ -196,12 +215,12 @@ ul {
 
 .btn--ghost {
   background: transparent;
-  border-color: rgba(247, 243, 236, 0.55);
+  border-color: rgba(247, 243, 236, 0.5);
   color: var(--color-ivory-soft);
 }
 
 .btn--ghost:hover {
-  background: rgba(247, 243, 236, 0.1);
+  background: rgba(247, 243, 236, 0.08);
   border-color: var(--color-ivory-soft);
 }
 
@@ -224,7 +243,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-top: 2rem;
+  margin-top: 2.15rem;
 }
 
 @media (max-width: 560px) {
@@ -235,13 +254,16 @@ ul {
   .btn-row .btn {
     width: 100%;
   }
+
+  .btn:hover {
+    transform: none;
+  }
 }
 
-/* Readable without JS / before intersection — only a light lift, never hide text */
 .reveal {
   opacity: 1;
-  transform: translateY(0.65rem);
-  transition: transform 0.7s var(--ease);
+  transform: translateY(0.55rem);
+  transition: transform 0.85s var(--ease-out);
 }
 
 .reveal.is-visible {

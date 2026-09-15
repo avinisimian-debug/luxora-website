@@ -64,7 +64,7 @@ export function GalleryCarousel({ fullBleed = true }: Props) {
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
       aria-roledescription="מצגת"
-      aria-label="המטבחים שלנו"
+      aria-label="תמונות השראה — גלריית מטבחים"
     >
       <div className="cinema__stage">
         {slides.map((slide, i) => (
