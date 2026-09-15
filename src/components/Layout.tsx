@@ -1,4 +1,4 @@
-import { DocumentTitle } from './DocumentTitle'
+import { Seo } from './Seo'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { WhatsAppFab } from './WhatsAppFab'
@@ -14,7 +14,7 @@ export function Layout() {
 
   return (
     <>
-      <DocumentTitle />
+      <Seo />
       <a className="skip-link" href="#main">
         דילוג לתוכן
       </a>
