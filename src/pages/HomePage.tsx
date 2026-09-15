@@ -9,6 +9,7 @@ import {
   HOME_FEATURED,
   KITCHEN_STYLES,
   STYLES_INTRO,
+  TESTIMONIALS,
 } from '../data/content'
 import { MEDIA } from '../data/media'
 import { BrandLogo } from '../components/BrandLogo'
@@ -201,6 +202,29 @@ export function HomePage() {
                     <p>{point.text}</p>
                   </div>
                 </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--sand" aria-labelledby="voices-title">
+        <div className="container">
+          <Reveal>
+            <div className="section-head">
+              <p className="eyebrow">לקוחות</p>
+              <h2 id="voices-title" className="section-title">
+                מדברי לקוחות
+              </h2>
+            </div>
+          </Reveal>
+          <div className="quotes-grid">
+            {TESTIMONIALS.map((item, i) => (
+              <Reveal key={item.name} delayMs={i * 40}>
+                <blockquote className="quote-block">
+                  <p>{item.quote}</p>
+                  <footer>{item.name}</footer>
+                </blockquote>
               </Reveal>
             ))}
           </div>

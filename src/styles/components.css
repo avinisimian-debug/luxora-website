@@ -1187,6 +1187,41 @@ body.menu-open .whatsapp-fab {
   color: var(--color-ivory-soft);
 }
 
+.quotes-grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 800px) {
+  .quotes-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 2.5rem;
+  }
+}
+
+.quote-block {
+  margin: 0;
+  padding: 1.65rem 0 0;
+  border-top: 1px solid rgba(90, 74, 55, 0.22);
+}
+
+.quote-block p {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+  line-height: 1.55;
+  color: var(--color-charcoal);
+  font-weight: 400;
+}
+
+.quote-block footer {
+  margin-top: 1.15rem;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  letter-spacing: 0.08em;
+  color: var(--color-walnut-deep);
+  font-weight: 700;
+}
+
 /* Inner pages denser content */
 .detail-grid {
   display: grid;
