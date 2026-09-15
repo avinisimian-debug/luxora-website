@@ -6,17 +6,15 @@ import {
   CUSTOMIZATION_POINTS,
   DIFFERENTIATORS,
   EDITORIAL_IMAGE,
-  HOME_FEATURED,
   TESTIMONIALS,
 } from '../data/content'
 import { MEDIA } from '../data/media'
 import { BrandLogo } from '../components/BrandLogo'
+import { EditorialGallery } from '../components/EditorialGallery'
 import { Reveal } from '../components/Reveal'
 import { StylesShowcase } from '../components/StylesShowcase'
 
 export function HomePage() {
-  const [heroFeature, ...sideFeatures] = HOME_FEATURED
-
   return (
     <>
       <section className="home-hero" aria-labelledby="hero-title">
@@ -121,42 +119,11 @@ export function HomePage() {
               </p>
             </div>
           </Reveal>
-          <div className="featured-mosaic">
-            {heroFeature ? (
-              <Reveal>
-                <Link to="/gallery" className="featured-card featured-card--hero">
-                  <img
-                    src={heroFeature.src}
-                    alt={heroFeature.alt}
-                    width={1400}
-                    height={1800}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span className="featured-card__caption">{heroFeature.alt}</span>
-                </Link>
-              </Reveal>
-            ) : null}
-            <div className="featured-mosaic__side">
-              {sideFeatures.map((item, i) => (
-                <Reveal key={item.src} delayMs={i * 45}>
-                  <Link to="/gallery" className="featured-card">
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      width={900}
-                      height={700}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <span className="featured-card__caption">{item.alt}</span>
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-          </div>
           <Reveal>
-            <div className="btn-row">
+            <EditorialGallery />
+          </Reveal>
+          <Reveal delayMs={60}>
+            <div className="btn-row" style={{ marginTop: '1.5rem' }}>
               <Link className="btn btn--line" to="/gallery">
                 לכל הגלריה
               </Link>
