@@ -50,9 +50,6 @@ export function Header() {
             aria-label="ניווט מובייל"
           >
             <div className="nav-mobile__panel">
-              <div className="nav-mobile__logo">
-                <BrandLogo variant="header" />
-              </div>
               {NAV.map((item) => (
                 <NavLink
                   key={item.to}
