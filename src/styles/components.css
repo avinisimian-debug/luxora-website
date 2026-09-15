@@ -322,13 +322,13 @@ body.menu-open .whatsapp-fab {
   object-fit: cover;
   /* Faucet stays on the visual left; quieter marble/cabinets under RTL copy on the right */
   object-position: 52% 44%;
-  transform: scale(1.03);
-  animation: hero-drift 36s var(--ease) both;
+  transform: scale(1.015);
+  animation: hero-drift 40s var(--ease) both;
 }
 
 @keyframes hero-drift {
   from {
-    transform: scale(1.055);
+    transform: scale(1.03);
   }
   to {
     transform: scale(1.01);
@@ -493,7 +493,7 @@ body.menu-open .whatsapp-fab {
 
   .home-hero__media img {
     animation: none;
-    transform: scale(1.06);
+    transform: scale(1.02);
     /* Mobile: keep brass faucet as the primary subject on the left */
     object-position: 34% 48%;
   }
