@@ -7,13 +7,8 @@ import { BrandLogo } from './BrandLogo'
 export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [portalReady, setPortalReady] = useState(false)
   const { pathname } = useLocation()
   const overHero = pathname === '/'
-
-  useEffect(() => {
-    setPortalReady(true)
-  }, [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -42,47 +37,49 @@ export function Header() {
     .join(' ')
 
   const mobileNav =
-    open && portalReady
-      ? createPortal(
-          <nav
-            id="mobile-nav"
-            className="nav-mobile is-open"
-            aria-label="ניווט מובייל"
-          >
-            <div className="nav-mobile__panel">
-              {NAV.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  end={'end' in item ? item.end : false}
-                  onClick={close}
-                  className={({ isActive }) => (isActive ? 'is-active' : undefined)}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-              <div className="nav-mobile__cta">
-                <a className="btn btn--primary" href={CONTACT.phoneHref}>
-                  {CONTACT.phoneDisplay}
-                </a>
-                <Link className="btn btn--line" to="/contact" onClick={close}>
-                  לתיאום פגישת תכנון
-                </Link>
-                <a
-                  className="btn btn--line"
-                  href={CONTACT.whatsappHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={close}
-                >
-                  WhatsApp
-                </a>
-              </div>
+    typeof document === 'undefined'
+      ? null
+      : createPortal(
+        <nav
+          id="mobile-nav"
+          className={open ? 'nav-mobile is-open' : 'nav-mobile'}
+          aria-label="ניווט מובייל"
+          aria-hidden={open ? undefined : true}
+          inert={open ? undefined : true}
+        >
+          <div className="nav-mobile__panel">
+            {NAV.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={'end' in item ? item.end : false}
+                onClick={close}
+                className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            <div className="nav-mobile__cta">
+              <a className="btn btn--primary" href={CONTACT.phoneHref}>
+                {CONTACT.phoneDisplay}
+              </a>
+              <Link className="btn btn--line" to="/contact" onClick={close}>
+                לתיאום פגישת תכנון
+              </Link>
+              <a
+                className="btn btn--line"
+                href={CONTACT.whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                onClick={close}
+              >
+                WhatsApp
+              </a>
             </div>
-          </nav>,
-          document.body,
-        )
-      : null
+          </div>
+        </nav>,
+        document.body,
+      )
 
   return (
     <header className={headerClass}>
