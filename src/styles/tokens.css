@@ -16,8 +16,8 @@
   --color-whatsapp: #25d366;
   --color-white: #ffffff;
 
-  --font-display: 'Frank Ruhl Libre', Georgia, 'Times New Roman', serif;
-  --font-body: 'Assistant', 'Segoe UI', Tahoma, sans-serif;
+  --font-display: 'Open Sans', 'Segoe UI', Tahoma, sans-serif;
+  --font-body: 'Open Sans', 'Segoe UI', Tahoma, sans-serif;
 
   --text-hero: clamp(2.45rem, 6.2vw, 4.35rem);
   --text-h1: clamp(2.1rem, 4.2vw, 3.35rem);
