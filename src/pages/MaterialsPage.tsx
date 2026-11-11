@@ -57,7 +57,7 @@ export function MaterialsPage() {
                   loading="lazy"
                   decoding="async"
                 />
-                <figcaption>{MEDIA.materialsDrawer.alt}</figcaption>
+                <figcaption>מגירות מטבח</figcaption>
               </figure>
             </Reveal>
             <Reveal delayMs={40}>
@@ -70,7 +70,7 @@ export function MaterialsPage() {
                   loading="lazy"
                   decoding="async"
                 />
-                <figcaption>{MEDIA.materialsHardware.alt}</figcaption>
+                <figcaption>מגירה פתוחה</figcaption>
               </figure>
             </Reveal>
           </div>
