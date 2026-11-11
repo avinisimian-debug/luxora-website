@@ -9,7 +9,6 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [portalReady, setPortalReady] = useState(false)
   const { pathname } = useLocation()
-  const overHero = pathname === '/'
 
   useEffect(() => {
     setPortalReady(true)
@@ -35,7 +34,6 @@ export function Header() {
   const headerClass = [
     'site-header',
     scrolled ? 'is-scrolled' : '',
-    overHero ? 'is-over-hero' : '',
     open ? 'is-menu-open' : '',
   ]
     .filter(Boolean)
