@@ -148,9 +148,12 @@ export const PROJECT_TYPES = [
  * Gallery images - visual inspiration only.
  * Do not present as named client projects unless officially confirmed.
  */
+const KITCHEN_WIDE = { src: '/images/gallery/kitchen-wide.jpg', alt: 'תמונת השראה - מטבח עם ויטרינות וחזיתות מחורצות', width: 1600, height: 2400 } as const
+
 export const GALLERY_SLIDES = [
-  { src: '/images/gallery/kitchen-wide.jpg', alt: 'תמונת השראה - מטבח עם ויטרינות וחזיתות מחורצות', width: 1600, height: 2400 },
+  { src: '/images/projects/kitchen-05.jpg', alt: 'תמונת השראה - מטבח בהיר עם חזית מחורצת, ויטרינות שחורות וברזים שחורים', width: 1024, height: 682 },
   { src: '/images/gallery/corner-fridge.jpg', alt: 'תמונת השראה - פינת מטבח עם נגרות גבוהה', width: 1600, height: 2400 },
+  KITCHEN_WIDE,
   { src: '/images/gallery/breakfast-bar.jpg', alt: 'תמונת השראה - פינת ישיבה ונגרות', width: 1600, height: 2400 },
   { src: '/images/gallery/vitrine-pastries.jpg', alt: 'תמונת השראה - ויטרינה ומשטח עבודה', width: 1600, height: 2400 },
   { src: '/images/gallery/corner-detail.jpg', alt: 'תמונת השראה - פרט חזית ומשטח', width: 1600, height: 2400 },
@@ -191,14 +194,6 @@ export const EDITORIAL_GALLERY = [
     height: 739,
     layout: 'banner',
     objectPosition: 'center center',
-  },
-  {
-    id: 'kitchen-05',
-    src: '/images/projects/kitchen-05.jpg',
-    alt: 'תמונת השראה - מטבח בהיר עם חזית מחורצת, ויטרינות שחורות וברזים שחורים',
-    width: 1024,
-    height: 682,
-    layout: 'wide',
   },
 ] as const
 
@@ -245,15 +240,7 @@ export const KITCHEN_04_GALLERY = [
   },
 ] as const
 
-export const EDITORIAL_IMAGE = GALLERY_SLIDES[0]
-
-/** Home preview - first images from the editorial kitchen set */
-export const HOME_FEATURED = [
-  EDITORIAL_GALLERY[0],
-  EDITORIAL_GALLERY[1],
-  EDITORIAL_GALLERY[2],
-  EDITORIAL_GALLERY[3],
-] as const
+export const EDITORIAL_IMAGE = KITCHEN_WIDE
 
 /**
  * Before & After - true pair when both frames are supplied.

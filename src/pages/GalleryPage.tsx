@@ -14,7 +14,7 @@ export function GalleryPage() {
       <header className="page-intro page-intro--compact">
         <div className="container">
           <p className="eyebrow">גלריה</p>
-          <h1>תמונות השראה</h1>
+          <h1>המטבחים שלנו</h1>
           <p className="page-intro__lead">
             גלריה ויזואלית למטבחים ונגרות בהתאמה אישית. {STYLES_INTRO}
           </p>
@@ -23,33 +23,6 @@ export function GalleryPage() {
 
       <section
         className="section section--tight-top section--gallery"
-        aria-label="גלריית תמונות השראה"
-      >
-        <div className="container">
-          <EditorialGallery />
-        </div>
-      </section>
-
-      <section
-        className="section section--gallery"
-        aria-labelledby="kitchen-04-title"
-      >
-        <div className="container">
-          <Reveal>
-            <h2 id="kitchen-04-title" className="section-title">
-              מטבח בשילוב עץ
-            </h2>
-          </Reveal>
-          <EditorialGallery
-            items={KITCHEN_04_GALLERY}
-            label="מטבח בשילוב עץ"
-            contain
-          />
-        </div>
-      </section>
-
-      <section
-        className="section section--gallery"
         aria-labelledby="details-title"
       >
         <div className="container">
@@ -61,6 +34,38 @@ export function GalleryPage() {
           <EditorialGallery
             items={GALLERY_SLIDES}
             label="מטבח סהרה עם ויטרינות"
+            contain
+          />
+        </div>
+      </section>
+
+      <section
+        className="section section--gallery"
+        aria-labelledby="wood-kitchen-title"
+      >
+        <div className="container">
+          <Reveal>
+            <h2 id="wood-kitchen-title" className="section-title">
+              מטבחים בשילוב עץ
+            </h2>
+          </Reveal>
+          <EditorialGallery label="מטבחים בשילוב עץ" />
+        </div>
+      </section>
+
+      <section
+        className="section section--gallery"
+        aria-labelledby="kitchen-04-title"
+      >
+        <div className="container">
+          <Reveal>
+            <h2 id="kitchen-04-title" className="section-title">
+              מטבח אקריל סהרה
+            </h2>
+          </Reveal>
+          <EditorialGallery
+            items={KITCHEN_04_GALLERY}
+            label="מטבח אקריל סהרה"
             contain
           />
         </div>
