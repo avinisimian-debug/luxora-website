@@ -40,7 +40,7 @@ export function AboutPage() {
                 </p>
               </div>
               <p className="section-lead about-service-note">
-                שירות בכל הארץ. אין אולם תצוגה.
+                שירות בכל הארץ.
               </p>
               <div className="btn-row">
                 <Link className="btn btn--primary" to="/contact">

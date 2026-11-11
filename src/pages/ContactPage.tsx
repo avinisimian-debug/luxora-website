@@ -81,7 +81,7 @@ export function ContactPage() {
           <p className="eyebrow">יצירת קשר</p>
           <h1>לקסורה – LUXORA</h1>
           <p className="page-intro__lead">
-            מטבחים ונגרות בהתאמה אישית. שירות בכל הארץ. אין אולם תצוגה.
+            מטבחים ונגרות בהתאמה אישית. שירות בכל הארץ.
           </p>
         </div>
       </header>

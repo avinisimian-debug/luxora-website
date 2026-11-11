@@ -1,15 +1,19 @@
-import { Link } from 'react-router-dom'
-import { CONTACT, NAV } from '../data/content'
-import { BrandLogo } from './BrandLogo'
+import { Link } from "react-router-dom";
+import { CONTACT, NAV } from "../data/content";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <Link to="/" className="brand brand--footer" aria-label="לקסורה LUXORA">
+          <Link
+            to="/"
+            className="brand brand--footer"
+            aria-label="לקסורה LUXORA"
+          >
             <BrandLogo variant="footer" />
           </Link>
           <p className="footer-desc">
@@ -36,15 +40,13 @@ export function Footer() {
               WhatsApp
             </a>
             <a href={CONTACT.emailHref}>{CONTACT.email}</a>
-            <span>{CONTACT.serviceArea}</span>
           </div>
         </div>
       </div>
 
       <div className="container footer-bottom">
         <span>© {year} לקסורה – LUXORA</span>
-        <span>אין אולם תצוגה</span>
       </div>
     </footer>
-  )
+  );
 }
