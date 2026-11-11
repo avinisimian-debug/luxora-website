@@ -86,4 +86,4 @@ export const SEO_PAGES: Record<string, SeoPage> = {
 
 export const DEFAULT_SEO = SEO_PAGES['/']
 
-export const OG_IMAGE_PATH = '/images/hero-home.jpg' as const
+export const OG_IMAGE_PATH = '/images/gallery/hero-home.jpg' as const

@@ -15,7 +15,7 @@ const STYLE_VISUALS = [
   {
     id: KITCHEN_STYLES[1].id,
     title: KITCHEN_STYLES[1].title,
-    src: '/images/projects/kitchen-07.jpg',
+    src: '/images/projects/kitchen-05.jpg',
     width: 1024,
     height: 682,
     position: 'center 45%',
@@ -23,7 +23,7 @@ const STYLE_VISUALS = [
   {
     id: KITCHEN_STYLES[2].id,
     title: KITCHEN_STYLES[2].title,
-    src: '/images/projects/kitchen-05.jpg',
+    src: '/images/projects/kitchen-04-02.jpg',
     width: 960,
     height: 710,
     position: 'center 50%',

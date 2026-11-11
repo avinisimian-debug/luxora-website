@@ -20,7 +20,7 @@ export function CarpentryPage() {
           <Reveal>
             <div className="editorial__media">
               <img
-                src="/images/drawer-open.jpg"
+                src="/images/gallery/drawer-open.jpg"
                 alt="תמונת השראה — מגירה פתוחה"
                 width={1200}
                 height={1600}

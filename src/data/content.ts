@@ -149,18 +149,17 @@ export const PROJECT_TYPES = [
  * Do not present as named client projects unless officially confirmed.
  */
 export const GALLERY_SLIDES = [
-  { src: '/images/hero-home.jpg', alt: 'תמונת השראה — מטבח עם ברז מוזהב ומשטח שיש' },
-  { src: '/images/kitchen-wide.jpg', alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות מחורצות' },
-  { src: '/images/corner-fridge.jpg', alt: 'תמונת השראה — פינת מטבח עם נגרות גבוהה' },
-  { src: '/images/breakfast-bar.jpg', alt: 'תמונת השראה — פינת ישיבה ונגרות' },
-  { src: '/images/vitrine-pastries.jpg', alt: 'תמונת השראה — ויטרינה ומשטח עבודה' },
-  { src: '/images/corner-detail.jpg', alt: 'תמונת השראה — פרט חזית ומשטח' },
-  { src: '/images/fluted-detail.jpg', alt: 'תמונת השראה — פרט חזית מחורצת' },
-  { src: '/images/drawers.jpg', alt: 'תמונת השראה — מגירות מטבח' },
-  { src: '/images/drawer-open.jpg', alt: 'תמונת השראה — מגירה פתוחה' },
-  { src: '/images/sink-drawer.jpg', alt: 'תמונת השראה — פתרון אחסון במטבח' },
-  { src: '/images/pastries.jpg', alt: 'תמונת השראה — משטח במטבח' },
-  { src: '/images/styling-vases.jpg', alt: 'תמונת השראה — פרט עיצובי בחלל' },
+  { src: '/images/gallery/kitchen-wide.jpg', alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות מחורצות', width: 1600, height: 2400 },
+  { src: '/images/gallery/corner-fridge.jpg', alt: 'תמונת השראה — פינת מטבח עם נגרות גבוהה', width: 1600, height: 2400 },
+  { src: '/images/gallery/breakfast-bar.jpg', alt: 'תמונת השראה — פינת ישיבה ונגרות', width: 1600, height: 2400 },
+  { src: '/images/gallery/vitrine-pastries.jpg', alt: 'תמונת השראה — ויטרינה ומשטח עבודה', width: 1600, height: 2400 },
+  { src: '/images/gallery/corner-detail.jpg', alt: 'תמונת השראה — פרט חזית ומשטח', width: 1600, height: 2400 },
+  { src: '/images/gallery/fluted-detail.jpg', alt: 'תמונת השראה — פרט חזית מחורצת', width: 998, height: 1498 },
+  { src: '/images/gallery/drawers.jpg', alt: 'תמונת השראה — מגירות מטבח', width: 998, height: 1498 },
+  { src: '/images/gallery/drawer-open.jpg', alt: 'תמונת השראה — מגירה פתוחה', width: 998, height: 1498 },
+  { src: '/images/gallery/sink-drawer.jpg', alt: 'תמונת השראה — פתרון אחסון במטבח', width: 998, height: 1498 },
+  { src: '/images/gallery/pastries.jpg', alt: 'תמונת השראה — משטח במטבח', width: 1600, height: 2400 },
+  { src: '/images/gallery/styling-vases.jpg', alt: 'תמונת השראה — פרט עיצובי בחלל', width: 998, height: 1498 },
 ] as const
 
 /**
@@ -185,22 +184,6 @@ export const EDITORIAL_GALLERY = [
     layout: 'wide',
   },
   {
-    id: 'kitchen-05',
-    src: '/images/projects/kitchen-05.jpg',
-    alt: 'תמונת השראה — מטבח עם אי מרכזי, משטח אבן וארונות גבוהים',
-    width: 960,
-    height: 710,
-    layout: 'wide',
-  },
-  {
-    id: 'kitchen-04',
-    src: '/images/projects/kitchen-04.jpg',
-    alt: 'תמונת השראה — מבט על מטבח עם אי, תאורת קו ותנורים משולבים',
-    width: 724,
-    height: 960,
-    layout: 'portrait',
-  },
-  {
     id: 'kitchen-02',
     src: '/images/projects/kitchen-02.jpg',
     alt: 'תמונת השראה — יחידת מטבח עם חזיתות עץ וברזים בגימור נחושת',
@@ -210,16 +193,8 @@ export const EDITORIAL_GALLERY = [
     objectPosition: 'center center',
   },
   {
-    id: 'kitchen-06',
-    src: '/images/projects/kitchen-06.jpg',
-    alt: 'תמונת השראה — מטבח בצורת U עם משטח אבן מלא וחזיתות בהירות',
-    width: 770,
-    height: 960,
-    layout: 'portrait',
-  },
-  {
-    id: 'kitchen-07',
-    src: '/images/projects/kitchen-07.jpg',
+    id: 'kitchen-05',
+    src: '/images/projects/kitchen-05.jpg',
     alt: 'תמונת השראה — מטבח בהיר עם חזית מחורצת, ויטרינות שחורות וברזים שחורים',
     width: 1024,
     height: 682,
@@ -227,8 +202,50 @@ export const EDITORIAL_GALLERY = [
   },
 ] as const
 
-export const HERO_IMAGE = GALLERY_SLIDES[0]
-export const EDITORIAL_IMAGE = GALLERY_SLIDES[1]
+/** Libraries - built-in shelving wall, shown as its own carousel. */
+export const LIBRARIES_GALLERY = [
+  {
+    id: 'library-01',
+    src: '/images/libraries/library-01.jpg',
+    alt: 'ספרייה בהתאמה אישית — קיר חזיתות מחורצות עם מדפי עץ וויטרינת זכוכית',
+    width: 856,
+    height: 858,
+  },
+  {
+    id: 'library-02',
+    src: '/images/libraries/library-02.jpg',
+    alt: 'ספרייה בהתאמה אישית — מדפי עץ עם תאורת לד חמה וויטרינת זכוכית',
+    width: 1206,
+    height: 1034,
+  },
+] as const
+
+/** Kitchen 04 - three views of the same kitchen, shown as its own carousel. */
+export const KITCHEN_04_GALLERY = [
+  {
+    id: 'kitchen-04-01',
+    src: '/images/projects/kitchen-04-01.jpg',
+    alt: 'תמונת השראה — מבט על מטבח עם אי, תאורת קו ותנורים משולבים',
+    width: 724,
+    height: 960,
+  },
+  {
+    id: 'kitchen-04-02',
+    src: '/images/projects/kitchen-04-02.jpg',
+    alt: 'תמונת השראה — מטבח עם אי מרכזי, משטח אבן וארונות גבוהים',
+    width: 960,
+    height: 710,
+  },
+  {
+    id: 'kitchen-04-03',
+    src: '/images/projects/kitchen-04-03.jpg',
+    alt: 'תמונת השראה — מטבח בצורת U עם משטח אבן מלא וחזיתות בהירות',
+    width: 770,
+    height: 960,
+  },
+] as const
+
+export const EDITORIAL_IMAGE = GALLERY_SLIDES[0]
 
 /** Home preview — first images from the editorial kitchen set */
 export const HOME_FEATURED = [

@@ -1662,7 +1662,6 @@ body.menu-open .whatsapp-fab {
 
 .inspire-carousel {
   position: relative;
-  direction: ltr;
   background: var(--color-stone);
   overflow: hidden;
 }
@@ -1749,11 +1748,11 @@ body.menu-open .whatsapp-fab {
 }
 
 .inspire-carousel__nav--prev {
-  left: 0.85rem;
+  right: 0.85rem;
 }
 
 .inspire-carousel__nav--next {
-  right: 0.85rem;
+  left: 0.85rem;
 }
 
 .inspire-carousel__dots {
@@ -2151,4 +2150,57 @@ body.menu-open .whatsapp-fab {
     min-height: 3.35rem;
     font-size: 1rem;
   }
+}
+
+/* Show whole image (no crop, no zoom) over a blurred copy of itself */
+.inspire-carousel--contain .inspire-carousel__open {
+  position: relative;
+}
+
+.inspire-carousel--contain .inspire-carousel__open::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg) center / cover no-repeat;
+  filter: blur(28px) brightness(0.75);
+  transform: scale(1.2);
+}
+
+.inspire-carousel--contain .inspire-carousel__open img,
+.inspire-carousel--contain .inspire-carousel__slide.is-active .inspire-carousel__open img {
+  position: relative;
+  object-fit: contain;
+  transform: none;
+}
+
+/* ‹ › are bidi-mirrored glyphs; render them literally inside RTL page */
+.inspire-carousel__nav,
+.lightbox__nav {
+  direction: ltr;
+}
+
+/* Gallery titles: one line, brass dash + fading hairline */
+.section--gallery .section-title {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.85rem, 2vw, 1.4rem);
+  max-width: none;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+}
+
+.section--gallery .section-title::before,
+.section--gallery .section-title::after {
+  content: '';
+  height: 1px;
+}
+
+.section--gallery .section-title::before {
+  flex: 0 0 clamp(1.75rem, 4vw, 3rem);
+  background: var(--color-brass);
+}
+
+.section--gallery .section-title::after {
+  flex: 1;
+  background: linear-gradient(to left, var(--color-brass-soft), transparent);
 }

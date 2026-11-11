@@ -3,8 +3,23 @@ import { EDITORIAL_GALLERY } from '../data/content'
 
 const AUTO_MS = 4500
 
-export function EditorialGallery() {
-  const items = EDITORIAL_GALLERY
+type GalleryItem = {
+  src: string
+  alt: string
+  width: number
+  height: number
+  objectPosition?: string
+}
+
+export function EditorialGallery({
+  items = EDITORIAL_GALLERY,
+  label = 'תמונות השראה',
+  contain = false,
+}: {
+  items?: readonly GalleryItem[]
+  label?: string
+  contain?: boolean
+}) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const [lightbox, setLightbox] = useState<number | null>(null)
@@ -68,9 +83,9 @@ export function EditorialGallery() {
     const endX = e.changedTouches[0]?.clientX ?? touchX.current
     const delta = endX - touchX.current
     if (Math.abs(delta) > 42) {
-      // RTL swipe: finger moves right → previous visual in LTR track terms is next in RTL feel
-      if (delta > 0) prev()
-      else next()
+      // RTL: next slide sits to the left, so dragging right reveals it
+      if (delta > 0) next()
+      else prev()
     }
     touchX.current = null
     setPaused(false)
@@ -81,9 +96,9 @@ export function EditorialGallery() {
   return (
     <>
       <div
-        className="inspire-carousel"
+        className={`inspire-carousel${contain ? ' inspire-carousel--contain' : ''}`}
         aria-roledescription="מצגת"
-        aria-label="תמונות השראה"
+        aria-label={label}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
@@ -96,11 +111,11 @@ export function EditorialGallery() {
         <div className="inspire-carousel__viewport">
           <div
             className="inspire-carousel__track"
-            style={{ transform: `translate3d(-${index * 100}%, 0, 0)` }}
+            style={{ transform: `translate3d(${index * 100}%, 0, 0)` }}
           >
             {items.map((item, i) => (
               <figure
-                key={item.id}
+                key={item.src}
                 className={`inspire-carousel__slide${i === index ? ' is-active' : ''}`}
                 aria-hidden={i !== index}
               >
@@ -110,6 +125,7 @@ export function EditorialGallery() {
                   onClick={() => setLightbox(i)}
                   aria-label={`פתיחת תמונה בגודל מלא: ${item.alt}`}
                   tabIndex={i === index ? 0 : -1}
+                  style={{ '--bg': `url("${item.src}")` } as React.CSSProperties}
                 >
                   <img
                     src={item.src}
@@ -120,7 +136,7 @@ export function EditorialGallery() {
                     decoding="async"
                     draggable={false}
                     style={
-                      'objectPosition' in item && item.objectPosition
+                      item.objectPosition
                         ? { objectPosition: item.objectPosition }
                         : undefined
                     }
@@ -152,7 +168,7 @@ export function EditorialGallery() {
           <div className="inspire-carousel__dots" role="tablist" aria-label="בחירת תמונה">
             {items.map((item, i) => (
               <button
-                key={item.id}
+                key={item.src}
                 type="button"
                 role="tab"
                 aria-selected={i === index}
@@ -163,7 +179,7 @@ export function EditorialGallery() {
             ))}
           </div>
 
-          <p className="inspire-carousel__count" aria-live="polite">
+          <p className="inspire-carousel__count" aria-live="polite" dir="ltr">
             {String(index + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
           </p>
         </div>
