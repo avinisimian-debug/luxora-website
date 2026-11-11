@@ -9,7 +9,6 @@ import {
   TESTIMONIALS,
 } from '../data/content'
 import { MEDIA } from '../data/media'
-import { BrandLogo } from '../components/BrandLogo'
 import { EditorialGallery } from '../components/EditorialGallery'
 import { Reveal } from '../components/Reveal'
 import { StylesShowcase } from '../components/StylesShowcase'
@@ -31,12 +30,6 @@ export function HomePage() {
         </div>
 
         <div className="container home-hero__content">
-          <div className="home-hero__logo">
-            <BrandLogo variant="hero" />
-          </div>
-          <p className="home-hero__mark" aria-hidden="true">
-            {BRAND.nameEn}
-          </p>
           <h1 id="hero-title">{BRAND.tagline}</h1>
           <p className="home-hero__sub">{BRAND.field}</p>
           <div className="btn-row">

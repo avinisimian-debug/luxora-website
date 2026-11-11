@@ -1,12 +1,11 @@
 type BrandLogoProps = {
-  variant?: 'header' | 'footer' | 'hero'
+  variant?: 'header' | 'footer'
   className?: string
 }
 
 const SIZES = {
   header: { width: 148, height: 52 },
   footer: { width: 180, height: 64 },
-  hero: { width: 220, height: 78 },
 } as const
 
 export function BrandLogo({ variant = 'header', className = '' }: BrandLogoProps) {
@@ -20,7 +19,7 @@ export function BrandLogo({ variant = 'header', className = '' }: BrandLogoProps
       width={size.width}
       height={size.height}
       decoding="async"
-      fetchPriority={variant === 'header' || variant === 'hero' ? 'high' : 'low'}
+      fetchPriority={variant === 'header' ? 'high' : 'low'}
     />
   )
 }

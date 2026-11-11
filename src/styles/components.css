@@ -70,20 +70,6 @@
   padding: 0;
 }
 
-.brand-logo--hero {
-  max-height: clamp(3.5rem, 9vw, 5.1rem);
-  width: auto;
-  max-width: min(100%, 14rem);
-  padding: 0.55rem 0.75rem;
-  background: rgba(250, 247, 242, 0.92);
-  border-radius: 2px;
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.28));
-}
-
-.home-hero__logo {
-  margin-bottom: 1.35rem;
-}
-
 .nav-mobile__logo {
   margin-bottom: 1.25rem;
   padding-bottom: 1rem;
@@ -373,15 +359,6 @@ body.menu-open .whatsapp-fab {
   }
 }
 
-.home-hero__mark {
-  font-family: var(--font-display);
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  letter-spacing: 0.42em;
-  font-weight: 500;
-  color: var(--color-brass);
-  margin-bottom: 1.05rem;
-}
-
 .home-hero h1 {
   font-size: var(--text-hero);
   color: var(--color-ivory-soft);
@@ -459,8 +436,7 @@ body.menu-open .whatsapp-fab {
 
   .home-hero__content {
     padding-block: 4.75rem 2.85rem;
-    max-width: 100%;
-    margin-inline-start: 0;
+    margin-inline: auto;
     animation-duration: 0.85s;
   }
 
