@@ -5,7 +5,7 @@ export const SITE_URL = 'https://website-ecru-iota-36.vercel.app' as const
 
 export const SITE_NAME = BRAND.full
 
-/** Keywords derived only from approved LUXORA offerings — no invented claims. */
+/** Keywords derived only from approved LUXORA offerings - no invented claims. */
 export const SEO_KEYWORDS = [
   'לקסורה',
   'LUXORA',
@@ -73,7 +73,7 @@ export const SEO_PAGES: Record<string, SeoPage> = {
   '/process': {
     path: '/process',
     title: `תהליך העבודה | ${BRAND.nameHe} – ${BRAND.nameEn}`,
-    description: `מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות — ליווי אישי, הבנת צרכים ובחירת חומרים. ${BRAND.nameHe}.`,
+    description: `מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות - ליווי אישי, הבנת צרכים ובחירת חומרים. ${BRAND.nameHe}.`,
     keywords: 'תהליך תכנון מטבח, ליווי מעצבת, תכנון אישי, לקסורה',
   },
   '/contact': {

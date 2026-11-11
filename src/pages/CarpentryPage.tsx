@@ -21,7 +21,7 @@ export function CarpentryPage() {
             <div className="editorial__media">
               <img
                 src="/images/gallery/drawer-open.jpg"
-                alt="תמונת השראה — מגירה פתוחה"
+                alt="תמונת השראה - מגירה פתוחה"
                 width={1200}
                 height={1600}
                 loading="lazy"

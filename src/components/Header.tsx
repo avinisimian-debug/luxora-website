@@ -85,7 +85,7 @@ export function Header() {
   return (
     <header className={headerClass}>
       <div className="site-header__inner">
-        <Link to="/" className="brand" aria-label="לקסורה LUXORA — לדף הבית" onClick={close}>
+        <Link to="/" className="brand" aria-label="לקסורה LUXORA - לדף הבית" onClick={close}>
           <BrandLogo variant="header" />
         </Link>
 

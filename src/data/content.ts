@@ -1,5 +1,5 @@
 /**
- * LUXORA — SOURCE OF TRUTH only.
+ * LUXORA - SOURCE OF TRUTH only.
  * Do not invent claims, numbers, testimonials, materials, or styles.
  */
 export const CONTACT = {
@@ -57,7 +57,7 @@ export const MATERIALS = [
   'זכוכית / ויטרינות',
 ] as const
 
-/** Official hardware wording — Blum primary; Turkish option for significant cost reduction */
+/** Official hardware wording - Blum primary; Turkish option for significant cost reduction */
 export const HARDWARE_NOTE =
   'לקסורה עובדת בעיקר עם פרזול בלום, ובפרט במגירות. במקרים שבהם הלקוח מעוניין בהוזלה משמעותית בעלות המגירות, ניתן להשתמש בחברות טורקיות.' as const
 
@@ -120,12 +120,12 @@ export const PROCESS_STEPS = [
   {
     step: '03',
     title: 'בחירת חומרים ופרטים',
-    text: 'בחירת החומרים וירידה לפרטים הקטנים — כחלק מתהליך אישי עם מעצבת מקצועית.',
+    text: 'בחירת החומרים וירידה לפרטים הקטנים - כחלק מתהליך אישי עם מעצבת מקצועית.',
   },
   {
     step: '04',
     title: 'נגרות בהתאמה אישית',
-    text: 'מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות — עם דגש על דיוק, פונקציונליות וגימור ברמה גבוהה.',
+    text: 'מתהליך התכנון הראשוני ועד לפרט האחרון בנגרות - עם דגש על דיוק, פונקציונליות וגימור ברמה גבוהה.',
   },
   {
     step: '05',
@@ -134,7 +134,7 @@ export const PROCESS_STEPS = [
   },
 ] as const
 
-/** Contact form options — based on official offerings only */
+/** Contact form options - based on official offerings only */
 export const PROJECT_TYPES = [
   'מטבח מודרני',
   'מטבח מינימליסטי',
@@ -145,32 +145,32 @@ export const PROJECT_TYPES = [
 ] as const
 
 /**
- * Gallery images — visual inspiration only.
+ * Gallery images - visual inspiration only.
  * Do not present as named client projects unless officially confirmed.
  */
 export const GALLERY_SLIDES = [
-  { src: '/images/gallery/kitchen-wide.jpg', alt: 'תמונת השראה — מטבח עם ויטרינות וחזיתות מחורצות', width: 1600, height: 2400 },
-  { src: '/images/gallery/corner-fridge.jpg', alt: 'תמונת השראה — פינת מטבח עם נגרות גבוהה', width: 1600, height: 2400 },
-  { src: '/images/gallery/breakfast-bar.jpg', alt: 'תמונת השראה — פינת ישיבה ונגרות', width: 1600, height: 2400 },
-  { src: '/images/gallery/vitrine-pastries.jpg', alt: 'תמונת השראה — ויטרינה ומשטח עבודה', width: 1600, height: 2400 },
-  { src: '/images/gallery/corner-detail.jpg', alt: 'תמונת השראה — פרט חזית ומשטח', width: 1600, height: 2400 },
-  { src: '/images/gallery/fluted-detail.jpg', alt: 'תמונת השראה — פרט חזית מחורצת', width: 998, height: 1498 },
-  { src: '/images/gallery/drawers.jpg', alt: 'תמונת השראה — מגירות מטבח', width: 998, height: 1498 },
-  { src: '/images/gallery/drawer-open.jpg', alt: 'תמונת השראה — מגירה פתוחה', width: 998, height: 1498 },
-  { src: '/images/gallery/sink-drawer.jpg', alt: 'תמונת השראה — פתרון אחסון במטבח', width: 998, height: 1498 },
-  { src: '/images/gallery/pastries.jpg', alt: 'תמונת השראה — משטח במטבח', width: 1600, height: 2400 },
-  { src: '/images/gallery/styling-vases.jpg', alt: 'תמונת השראה — פרט עיצובי בחלל', width: 998, height: 1498 },
+  { src: '/images/gallery/kitchen-wide.jpg', alt: 'תמונת השראה - מטבח עם ויטרינות וחזיתות מחורצות', width: 1600, height: 2400 },
+  { src: '/images/gallery/corner-fridge.jpg', alt: 'תמונת השראה - פינת מטבח עם נגרות גבוהה', width: 1600, height: 2400 },
+  { src: '/images/gallery/breakfast-bar.jpg', alt: 'תמונת השראה - פינת ישיבה ונגרות', width: 1600, height: 2400 },
+  { src: '/images/gallery/vitrine-pastries.jpg', alt: 'תמונת השראה - ויטרינה ומשטח עבודה', width: 1600, height: 2400 },
+  { src: '/images/gallery/corner-detail.jpg', alt: 'תמונת השראה - פרט חזית ומשטח', width: 1600, height: 2400 },
+  { src: '/images/gallery/fluted-detail.jpg', alt: 'תמונת השראה - פרט חזית מחורצת', width: 998, height: 1498 },
+  { src: '/images/gallery/drawers.jpg', alt: 'תמונת השראה - מגירות מטבח', width: 998, height: 1498 },
+  { src: '/images/gallery/drawer-open.jpg', alt: 'תמונת השראה - מגירה פתוחה', width: 998, height: 1498 },
+  { src: '/images/gallery/sink-drawer.jpg', alt: 'תמונת השראה - פתרון אחסון במטבח', width: 998, height: 1498 },
+  { src: '/images/gallery/pastries.jpg', alt: 'תמונת השראה - משטח במטבח', width: 1600, height: 2400 },
+  { src: '/images/gallery/styling-vases.jpg', alt: 'תמונת השראה - פרט עיצובי בחלל', width: 998, height: 1498 },
 ] as const
 
 /**
- * Primary editorial gallery — kitchen inspiration visuals.
+ * Primary editorial gallery - kitchen inspiration visuals.
  * Shown as inspiration / gallery visuals, not as named client projects.
  */
 export const EDITORIAL_GALLERY = [
   {
     id: 'kitchen-01',
     src: '/images/projects/kitchen-01.jpg',
-    alt: 'תמונת השראה — מטבח מודרני עם חזיתות אפורות, עץ ומשטח אבן',
+    alt: 'תמונת השראה - מטבח מודרני עם חזיתות אפורות, עץ ומשטח אבן',
     width: 1600,
     height: 1200,
     layout: 'hero',
@@ -178,7 +178,7 @@ export const EDITORIAL_GALLERY = [
   {
     id: 'kitchen-03',
     src: '/images/projects/kitchen-03.jpg',
-    alt: 'תמונת השראה — מטבח מינימליסטי עם חזיתות בהירות, פס עץ וברז מוזהב',
+    alt: 'תמונת השראה - מטבח מינימליסטי עם חזיתות בהירות, פס עץ וברז מוזהב',
     width: 935,
     height: 721,
     layout: 'wide',
@@ -186,7 +186,7 @@ export const EDITORIAL_GALLERY = [
   {
     id: 'kitchen-02',
     src: '/images/projects/kitchen-02.jpg',
-    alt: 'תמונת השראה — יחידת מטבח עם חזיתות עץ וברזים בגימור נחושת',
+    alt: 'תמונת השראה - יחידת מטבח עם חזיתות עץ וברזים בגימור נחושת',
     width: 1600,
     height: 739,
     layout: 'banner',
@@ -195,7 +195,7 @@ export const EDITORIAL_GALLERY = [
   {
     id: 'kitchen-05',
     src: '/images/projects/kitchen-05.jpg',
-    alt: 'תמונת השראה — מטבח בהיר עם חזית מחורצת, ויטרינות שחורות וברזים שחורים',
+    alt: 'תמונת השראה - מטבח בהיר עם חזית מחורצת, ויטרינות שחורות וברזים שחורים',
     width: 1024,
     height: 682,
     layout: 'wide',
@@ -207,14 +207,14 @@ export const LIBRARIES_GALLERY = [
   {
     id: 'library-01',
     src: '/images/libraries/library-01.jpg',
-    alt: 'ספרייה בהתאמה אישית — קיר חזיתות מחורצות עם מדפי עץ וויטרינת זכוכית',
+    alt: 'ספרייה בהתאמה אישית - קיר חזיתות מחורצות עם מדפי עץ וויטרינת זכוכית',
     width: 856,
     height: 858,
   },
   {
     id: 'library-02',
     src: '/images/libraries/library-02.jpg',
-    alt: 'ספרייה בהתאמה אישית — מדפי עץ עם תאורת לד חמה וויטרינת זכוכית',
+    alt: 'ספרייה בהתאמה אישית - מדפי עץ עם תאורת לד חמה וויטרינת זכוכית',
     width: 1206,
     height: 1034,
   },
@@ -225,21 +225,21 @@ export const KITCHEN_04_GALLERY = [
   {
     id: 'kitchen-04-01',
     src: '/images/projects/kitchen-04-01.jpg',
-    alt: 'תמונת השראה — מבט על מטבח עם אי, תאורת קו ותנורים משולבים',
+    alt: 'תמונת השראה - מבט על מטבח עם אי, תאורת קו ותנורים משולבים',
     width: 724,
     height: 960,
   },
   {
     id: 'kitchen-04-02',
     src: '/images/projects/kitchen-04-02.jpg',
-    alt: 'תמונת השראה — מטבח עם אי מרכזי, משטח אבן וארונות גבוהים',
+    alt: 'תמונת השראה - מטבח עם אי מרכזי, משטח אבן וארונות גבוהים',
     width: 960,
     height: 710,
   },
   {
     id: 'kitchen-04-03',
     src: '/images/projects/kitchen-04-03.jpg',
-    alt: 'תמונת השראה — מטבח בצורת U עם משטח אבן מלא וחזיתות בהירות',
+    alt: 'תמונת השראה - מטבח בצורת U עם משטח אבן מלא וחזיתות בהירות',
     width: 770,
     height: 960,
   },
@@ -247,7 +247,7 @@ export const KITCHEN_04_GALLERY = [
 
 export const EDITORIAL_IMAGE = GALLERY_SLIDES[0]
 
-/** Home preview — first images from the editorial kitchen set */
+/** Home preview - first images from the editorial kitchen set */
 export const HOME_FEATURED = [
   EDITORIAL_GALLERY[0],
   EDITORIAL_GALLERY[1],
@@ -256,32 +256,32 @@ export const HOME_FEATURED = [
 ] as const
 
 /**
- * Before & After — true pair when both frames are supplied.
+ * Before & After - true pair when both frames are supplied.
  * Labels: לפני / אחרי only. No invented project copy.
  */
 export const BEFORE_AFTER_COMPARE = {
   id: 'ba-01',
   before: {
     src: '/images/before-after/set-01-before.jpg',
-    alt: 'לפני — מטבח בחלל מתחת למדרגות',
+    alt: 'לפני - מטבח בחלל מתחת למדרגות',
     width: 1024,
     height: 768,
   },
   after: {
     src: '/images/before-after/set-01-overview.jpg',
-    alt: 'אחרי — מטבח בחלל מתחת למדרגות',
+    alt: 'אחרי - מטבח בחלל מתחת למדרגות',
     width: 1024,
     height: 682,
   },
   detail: {
     src: '/images/before-after/set-01-detail.jpg',
-    alt: 'אחרי — פרט ברזים',
+    alt: 'אחרי - פרט ברזים',
     width: 682,
     height: 1024,
   },
 } as const
 
-/** @deprecated kept for compatibility — use BEFORE_AFTER_COMPARE */
+/** @deprecated kept for compatibility - use BEFORE_AFTER_COMPARE */
 export const BEFORE_AFTER_SETS = [
   {
     id: 'ba-01',
@@ -297,7 +297,7 @@ export const BEFORE_AFTER_SETS = [
   },
 ] as const
 
-/** Real client testimonials — provided by the business */
+/** Real client testimonials - provided by the business */
 export const TESTIMONIALS = [
   {
     name: 'שמואל',

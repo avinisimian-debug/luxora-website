@@ -102,7 +102,7 @@ export function BeforeAfterStory() {
             aria-valuemin={4}
             aria-valuemax={96}
             aria-valuenow={Math.round(pos)}
-            aria-label="השוואת לפני ואחרי — גרור להצגת השינוי"
+            aria-label="השוואת לפני ואחרי - גרור להצגת השינוי"
             tabIndex={0}
             onKeyDown={(e) => {
               if (e.key === 'ArrowLeft') setPos((p) => Math.min(96, p + 3))

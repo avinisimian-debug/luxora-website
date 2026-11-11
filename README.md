@@ -18,7 +18,7 @@ npm run preview
 
 ## טופס יצירת קשר (Vercel)
 
-הטופס שולח קודם ל־`/api/contact` (Serverless). אם אין מפתח מייל מוגדר בשרת — נופל חזרה ל־FormSubmit.
+הטופס שולח קודם ל־`/api/contact` (Serverless). אם אין מפתח מייל מוגדר בשרת - נופל חזרה ל־FormSubmit.
 
 ב־Vercel → Project → Settings → Environment Variables הגדירו **אחד** מהבאים (Production + Preview):
 
@@ -32,7 +32,7 @@ npm run preview
 
 ראו גם `.env.example`.
 
-לאחר הוספת משתנים — Redeploy.
+לאחר הוספת משתנים - Redeploy.
 
 ## פריסה
 

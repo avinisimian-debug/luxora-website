@@ -1,4 +1,4 @@
-/* ——— Header ——— */
+/* --- Header --- */
 .site-header {
   position: sticky;
   top: 0;
@@ -8,7 +8,7 @@
   align-items: center;
   background: #faf8f4;
   border-bottom: 1px solid transparent;
-  /* Never transition background — causes hero bleed when menu opens */
+  /* Never transition background - causes hero bleed when menu opens */
   transition: border-color 0.3s ease;
 }
 
@@ -189,7 +189,7 @@
   transform: rotate(-45deg);
 }
 
-/* Portaled to document.body — full-viewport opaque overlay from frame 1 */
+/* Portaled to document.body - full-viewport opaque overlay from frame 1 */
 .nav-mobile {
   position: fixed;
   inset: 0;
@@ -203,7 +203,7 @@
   -webkit-backdrop-filter: none;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  /* Transform-only entrance — never animate opacity/background */
+  /* Transform-only entrance - never animate opacity/background */
   animation: nav-in 0.28s var(--ease);
   transition: none;
 }
@@ -279,7 +279,7 @@ body.menu-open .whatsapp-fab {
   pointer-events: none;
 }
 
-/* ——— Cinematic Home Hero ——— */
+/* --- Cinematic Home Hero --- */
 .home-hero {
   position: relative;
   min-height: 100svh;
@@ -320,7 +320,7 @@ body.menu-open .whatsapp-fab {
   inset: 0;
   pointer-events: none;
   background:
-    /* Soft floor for type — image stays the hero */
+    /* Soft floor for type - image stays the hero */
     linear-gradient(
       to top,
       rgba(20, 17, 14, 0.78) 0%,
@@ -540,7 +540,7 @@ body.menu-open .whatsapp-fab {
   max-width: 18ch;
 }
 
-/* Destination links — editorial, not cards */
+/* Destination links - editorial, not cards */
 .destinations {
   display: grid;
   gap: 0;
@@ -800,7 +800,7 @@ body.menu-open .whatsapp-fab {
   font-weight: 700;
 }
 
-/* ——— Styles atelier (premium visual showcase) ——— */
+/* --- Styles atelier (premium visual showcase) --- */
 .styles-atelier__intro {
   max-width: 36rem;
   margin-bottom: clamp(2rem, 4vw, 3rem);
@@ -1451,7 +1451,7 @@ body.menu-open .whatsapp-fab {
   font-weight: 700;
 }
 
-/* ——— Before & After compare ——— */
+/* --- Before & After compare --- */
 .section--ba {
   padding-top: clamp(2.5rem, 5vw, 4rem);
   padding-bottom: clamp(3rem, 6vw, 5rem);
@@ -1631,7 +1631,7 @@ body.menu-open .whatsapp-fab {
   }
 }
 
-/* ——— Inspiration carousel ——— */
+/* --- Inspiration carousel --- */
 .section--gallery {
   padding-top: clamp(1.5rem, 3vw, 2.5rem);
 }

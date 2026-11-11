@@ -23,7 +23,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const body = (typeof req.body === 'string' ? JSON.parse(req.body) : req.body) as LeadBody
 
-  // Honeypot — silent reject for bots
+  // Honeypot - silent reject for bots
   if (body.website?.trim()) {
     return res.status(200).json({ success: true })
   }
@@ -31,7 +31,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const fullName = body.fullName?.trim() || ''
   const phone = body.phone?.trim() || ''
   const projectType = body.projectType?.trim() || ''
-  const message = body.message?.trim() || '—'
+  const message = body.message?.trim() || '-'
 
   if (!fullName || phone.replace(/\D/g, '').length < 9 || !projectType) {
     return badRequest(res, 'חסרים פרטים נדרשים')

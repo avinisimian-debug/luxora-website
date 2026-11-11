@@ -15,7 +15,7 @@ export function BrandLogo({ variant = 'header', className = '' }: BrandLogoProps
     <img
       className={`brand-logo brand-logo--${variant} ${className}`.trim()}
       src="/images/logo-luxora.png"
-      alt="LUXORA לקסורה — מטבחים ונגרות בהתאמה אישית"
+      alt="LUXORA לקסורה - מטבחים ונגרות בהתאמה אישית"
       width={size.width}
       height={size.height}
       decoding="async"

@@ -11,7 +11,7 @@ export function MaterialsPage() {
           <p className="eyebrow">חומרים</p>
           <h1>חומרים וחזיתות</h1>
           <p className="page-intro__lead">
-            בחירת חומרים וגימור ברמה גבוהה — כחלק מתהליך תכנון אישי.
+            בחירת חומרים וגימור ברמה גבוהה - כחלק מתהליך תכנון אישי.
           </p>
         </div>
       </header>

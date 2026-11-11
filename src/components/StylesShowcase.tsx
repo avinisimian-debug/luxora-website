@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { KITCHEN_STYLES, STYLES_INTRO } from '../data/content'
 import { Reveal } from './Reveal'
 
-/** Visual atmosphere only — not labeled as named client projects. */
+/** Visual atmosphere only - not labeled as named client projects. */
 const STYLE_VISUALS = [
   {
     id: KITCHEN_STYLES[0].id,

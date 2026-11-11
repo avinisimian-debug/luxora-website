@@ -38,7 +38,7 @@ async function sendViaApi(payload: LeadPayload): Promise<'ok' | 'unavailable' | 
 
     return 'ok'
   } catch (err) {
-    // Network / CORS on local Vite without API — treat as unavailable for fallback
+    // Network / CORS on local Vite without API - treat as unavailable for fallback
     if (err instanceof TypeError) return 'unavailable'
     throw err
   }
@@ -66,7 +66,7 @@ export async function sendLeadEmail(payload: LeadPayload): Promise<void> {
       שם: payload.fullName,
       טלפון: payload.phone,
       'סוג פרויקט': payload.projectType,
-      הודעה: payload.message.trim() || '—',
+      הודעה: payload.message.trim() || '-',
       _subject: `פנייה חדשה מאתר לקסורה – ${payload.fullName}`,
       _template: 'table',
       _captcha: 'false',

@@ -20,7 +20,7 @@ export function Reveal({ children, className = '', delayMs = 0 }: RevealProps) {
 
     const reveal = () => el.classList.add('is-visible')
 
-    // Already in (or near) view on mount — settle immediately
+    // Already in (or near) view on mount - settle immediately
     const rect = el.getBoundingClientRect()
     if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
       reveal()

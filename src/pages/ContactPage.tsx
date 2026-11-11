@@ -46,7 +46,7 @@ export function ContactPage() {
     event.preventDefault()
     if (!validate()) return
 
-    // Bot filled honeypot — pretend success (no network call)
+    // Bot filled honeypot - pretend success (no network call)
     if (form.website.trim()) {
       setStatus('success')
       return
@@ -138,7 +138,7 @@ export function ContactPage() {
               <form className="contact-form" onSubmit={onSubmit} noValidate>
                 <h2>יצירת קשר</h2>
                 <p className="contact-form__hint">
-                  השאירו פרטים — הפנייה תגיע אלינו למייל {CONTACT.email}.
+                  השאירו פרטים - הפנייה תגיע אלינו למייל {CONTACT.email}.
                 </p>
 
                 <div className="hp-field" aria-hidden="true">
