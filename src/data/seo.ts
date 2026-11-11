@@ -54,7 +54,7 @@ export const SEO_PAGES: Record<string, SeoPage> = {
   },
   '/gallery': {
     path: '/gallery',
-    title: `המטבחים שלנו | תמונות השראה | ${BRAND.nameHe} – ${BRAND.nameEn}`,
+    title: `המטבחים שלנו | ${BRAND.nameHe} – ${BRAND.nameEn}`,
     description: `גלריית השראה למטבחים ונגרות בהתאמה אישית. סגנונות: ${styleNames}.`,
     keywords: `גלריית מטבחים, תמונות מטבח, ${styleNames}, לקסורה`,
   },

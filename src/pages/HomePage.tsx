@@ -105,7 +105,7 @@ export function HomePage() {
             <div className="section-head">
               <p className="eyebrow">גלריה</p>
               <h2 id="gallery-preview-title" className="section-title">
-                תמונות השראה
+                המטבחים שלנו
               </h2>
               <p className="section-lead">
                 מבחר מתמונות ההשראה בגלריה - להמחשת כיווני עיצוב.

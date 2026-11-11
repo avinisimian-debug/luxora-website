@@ -13,7 +13,7 @@ type GalleryItem = {
 
 export function EditorialGallery({
   items = EDITORIAL_GALLERY,
-  label = 'תמונות השראה',
+  label = 'המטבחים שלנו',
   contain = false,
 }: {
   items?: readonly GalleryItem[]
