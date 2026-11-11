@@ -40,8 +40,8 @@ export const NAV = [
 
 /** Official kitchen styles only */
 export const KITCHEN_STYLES = [
-  { id: 'modern', title: 'מטבח מודרני' },
   { id: 'minimal', title: 'מטבח מינימליסטי' },
+  { id: 'modern', title: 'מטבח מודרני' },
   { id: 'classic', title: 'מטבח קלאסי' },
   { id: 'rustic', title: 'מטבח כפרי' },
 ] as const
